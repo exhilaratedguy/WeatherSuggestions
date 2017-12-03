@@ -2,16 +2,22 @@ package output;
 
 public class Weather {
 
-    private float temp;
+    private double temp;
     private float pressure;
     private float humidity;
-    private float temp_min;
-    private float temp_max;
-    public float getTemp() {
+    private double temp_min;
+    private double temp_max;
+    /*
+    private float sea_level, grnd_level;
+    public float getSea_level(){return sea_level;}; public float getGrnd_level(){return grnd_level;};
+    public void setSea_level(float sea_level){this.sea_level=sea_level;}; public void setGrnd_level(float grnd_level){this.grnd_level=grnd_level;};
+    */
+
+    public double getTemp() {
         return temp;
     }
-    public void setTemp(float temp) {
-        this.temp = temp-273;
+    public void setTemp(double temp) {
+        this.temp = temp-273.15;
     }
     public float getPressure() {
         return pressure;
@@ -25,18 +31,17 @@ public class Weather {
     public void setHumidity(float humidity) {
         this.humidity = humidity;
     }
-    public float getTemp_min() {
+    public double getTemp_min() {
         return temp_min;
     }
-    public void setTemp_min(float temp_min) {
-        this.temp_min = temp_min;
+    public void setTemp_min(double temp_min) {
+        this.temp_min = temp_min-273.15;
     }
-    public float getTemp_max() {
+    public double getTemp_max() {
         return temp_max;
     }
-    public void setTemp_max(float temp_max) {
-        this.temp_max = temp_max;
+    public void setTemp_max(double temp_max) {
+        this.temp_max = temp_max-273.15;
     }
-
 
 }

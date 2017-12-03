@@ -15,7 +15,7 @@ public class MysqlConnect {
     }
     private Connection connect() {
         // SQLite connection string
-        String url = "jdbc:sqlite:C:/sqlite/Paradigms.db";
+        String url = "jdbc:sqlite:C:/Users/Acer/Desktop/UPB/Programming Paradigms/test/Paradigms.db";
         Connection conn = null;
         try {
             conn = DriverManager.getConnection(url);
@@ -32,7 +32,7 @@ public class MysqlConnect {
 
         try (Connection conn = this.connect()) {
             try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
-                System.out.println("passa");
+                //System.out.println("passa");
                 pstmt.setString(1, name);
                 pstmt.setString(2, email);
                 pstmt.setString(3, password);
