@@ -1,8 +1,5 @@
 package database;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.PreparedStatement;
+import java.sql.*;
 
 
 public class MysqlConnect {
@@ -26,7 +23,7 @@ public class MysqlConnect {
 
     }
 
-    public  void insertUser(String name, String email,String password)
+    public void insertUser(String name, String email,String password)
     {
         String sql = "INSERT INTO Users(name,email,password) VALUES(?,?,?)";
 
@@ -43,6 +40,39 @@ public class MysqlConnect {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    // to test 2 cases: if User already exists when registering a new one
+    // and to check if the Login info is correct when trying to log in
+    public boolean isUser(String squery){
+        boolean res = false;
+
+        try(Connection conn = this.connect()) {
+            try (PreparedStatement pStmt = conn.prepareStatement(squery)){
+                ResultSet rSet = pStmt.executeQuery();
+                if(rSet.next())     // if the query returns some result then res=true
+                    res = true;     // if not, res is already false
+            }
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+
+        return res;
+    }
+
+    public String getName(String email){
+        String squery = "SELECT * FROM Users WHERE email IS '" + email + "';";
+
+        try(Connection conn = this.connect()) {
+            try (PreparedStatement pStmt = conn.prepareStatement(squery)){
+                ResultSet rSet = pStmt.executeQuery();
+                if(rSet.next())
+                    return rSet.getString("Name");
+            }
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+        return "";
     }
 
 
