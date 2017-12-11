@@ -6,6 +6,9 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.text.DecimalFormat;
+import java.util.Stack;
+
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import database.MysqlConnect;
@@ -144,7 +147,7 @@ public class Interface extends Application {
                             stage.setScene(tempScene);
 
                             GridPane tempGrid = new GridPane();
-                            tempGrid.setPadding(new Insets(10, 10, 10, 10));
+                            tempGrid.setPadding(new Insets(10));
                             tempGrid.setVgap(25);
                             tempGrid.setHgap(25);
                             tempScene.setRoot(tempGrid);
@@ -155,8 +158,8 @@ public class Interface extends Application {
                             title.setWrapText(true); // nao funciona god knows why lul
                             GridPane.setConstraints(title, 0, 0);
                             tempGrid.getChildren().add(title);
-                            Label lblTemperature = new Label();
 
+                            Label lblTemperature = new Label();
                             Label lblTemp_min = new Label();
                             Label lblTemp_max = new Label();
                             Label lblHumidity = new Label();
@@ -335,12 +338,12 @@ public class Interface extends Application {
 
                 // Button 'Log in'
                 Button logInBtn = new Button("Log in");
-                GridPane.setConstraints(logInBtn, 0, 6);
+                GridPane.setConstraints(logInBtn, 0, 8);
                 GridPane.setHalignment(logInBtn, HPos.RIGHT);
 
                 // Button 'Back'
                 Button backBtn = new Button ("Back");
-                GridPane.setConstraints(backBtn, 0, 6);
+                GridPane.setConstraints(backBtn, 0, 8);
                 GridPane.setHalignment(backBtn, HPos.LEFT);
 
                 logGrid.getChildren().addAll(email, pw, logInBtn, backBtn);
@@ -356,7 +359,7 @@ public class Interface extends Application {
                     @Override
                     public void handle(ActionEvent event) {
                         MysqlConnect db = new MysqlConnect();
-                        String query = "SELECT * FROM Users WHERE email IS '" + email.getText() +"' AND password IS '" + pw.getText() + "';";
+                        String query = "SELECT * FROM Users WHERE email IS '" + email.getText() +"';";
 
                         // if the user does not exist
                         if(!db.isUser(query))
@@ -364,6 +367,15 @@ public class Interface extends Application {
                             JOptionPane.showMessageDialog(null,"This user does not exist.", "Error", JOptionPane.ERROR_MESSAGE);
                             return;
                         } // ELSE BOOLEAN DE LOGGED IN A TRUE ???????????????
+                        else {
+                            query += "SELECT * FROM Users WHERE email IS '" + email.getText() + "' AND password IS '" + pw.getText() + "';";
+                            // if the email/pw combo is wrong
+                            if(!db.isUser(query))
+                            {
+                                JOptionPane.showMessageDialog(null,"Incorrect password.", "Error", JOptionPane.ERROR_MESSAGE);
+                                return;
+                            }
+                        }
 
                         // root
                         StackPane rootPane = new StackPane();
@@ -376,16 +388,15 @@ public class Interface extends Application {
 
                         // BorderPane to be able to set a Text centered at the top of the window
                         BorderPane borderPane = new BorderPane();
-                        borderPane.setPadding(new Insets(10));
+
                         // 'Hello <name>'
                         Text name = new Text("Hello " + db.getName(email.getText()) + "!");
-                        name.setFont(Font.font("Verdana", FontWeight.SEMI_BOLD, 15));
+                        name.setFont(Font.font("Verdana", FontWeight.SEMI_BOLD, 25));
                         borderPane.setTop(name);
                         BorderPane.setAlignment(name, Pos.CENTER);
 
                         //GridPane
                         GridPane gridPane = new GridPane();
-                        gridPane.setPadding(new Insets(10));
                         gridPane.setVgap(20);
                         gridPane.setHgap(20);
 
@@ -414,8 +425,8 @@ public class Interface extends Application {
                         gridPane.getChildren().addAll(countryField, cityField, logOutBtn, searchBtn);
                         GridPane.setConstraints(countryField, 0, 3);
                         GridPane.setConstraints(cityField, 0, 4);
-                        GridPane.setConstraints(logOutBtn, 0, 6);
-                        GridPane.setConstraints(searchBtn, 0, 6);
+                        GridPane.setConstraints(logOutBtn, 0, 8);
+                        GridPane.setConstraints(searchBtn, 0, 8);
 
                         logOutBtn.setOnAction(new EventHandler<ActionEvent>() {
                             @Override
@@ -425,8 +436,165 @@ public class Interface extends Application {
                             }
                         });
 
+                        searchBtn.setOnAction(new EventHandler<ActionEvent>() {
+                            @Override
+                            public void handle(ActionEvent event) {
+
+                                String countryValue = countryField.getText();
+                                String cityValue = cityField.getText();
+
+                                try{
+                                    String urlString = "http://api.openweathermap.org/data/2.5/forecast?q="
+                                            + cityValue + "," + countryValue + "&APPID=7a7620706be88fd95da0167b0f625f24";
+
+                                    URL url = new URL(urlString);
+                                    HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                                    conn.setRequestMethod("GET");
+                                    conn.setRequestProperty("Accept", "application/json");
+
+                                    if (conn.getResponseCode() == 404) { // wrong country/city name -- doesn't find the web page
+                                        JOptionPane.showMessageDialog(null, "Wrong country/city name", "Error 404", JOptionPane.ERROR_MESSAGE);
+                                        return;
+                                    } else if (conn.getResponseCode() != 200) {
+                                        throw new RuntimeException("Failed : HTTP error code : " + conn.getResponseCode());
+                                    }
+
+                                    BufferedReader br = new BufferedReader( new InputStreamReader((conn.getInputStream())) );
+
+                                    // new Scene
+                                    Scene forecastScene = new Scene(new Group(), 575, 450);
+                                    stage.setScene(forecastScene);
+
+                                    // root pane
+                                    StackPane rootPane = new StackPane();
+                                    rootPane.setPadding(new Insets(10));
+                                    forecastScene.setRoot(rootPane);
+
+                                    // BorderPane to be able to set a Text centered at the top of the window
+                                    BorderPane borderPane2 = new BorderPane();
+
+                                    // City name
+                                    Text cityName = new Text(cityValue+", "+countryValue);
+                                    cityName.setFont(Font.font("Verdana", FontWeight.BOLD, 22));
+                                    borderPane2.setTop(cityName);
+                                    BorderPane.setAlignment(cityName, Pos.CENTER);
+
+                                    // GridPane for the VBoxes
+                                    GridPane gridPane = new GridPane();
+                                    gridPane.setPadding(new Insets(10));
+                                    gridPane.setVgap(20);
+                                    gridPane.setHgap(20);
+
+                                    String output;
+                                    String json = "";
+                                    while ( (output = br.readLine()) != null){
+                                        json += output;
+                                        //System.out.println(json);
+                                    }
+                                    conn.disconnect();
+
+                                    // split the json node into multiple nodes (for the multiple times)
+                                    String[] info = json.split("[{]\"dt\""); // split when ' {"dt" '
+                                    final int N_NODES = info.length;
+                                    System.out.println(N_NODES+"\n\n\n");
+
+                                    Label[] times = new Label[N_NODES-1];
+                                    ObjectMapper objMapper = new ObjectMapper();
+                                    JsonNode[] dateNodes = new JsonNode[N_NODES-1];
+                                    JsonNode[] mainNodes = new JsonNode[N_NODES-1];
+                                    Weather[] weathers = new Weather[N_NODES-1];
+                                    String[] hours = new String[N_NODES-1];
+
+                                    for(int i=0; i<N_NODES; i++)
+                                    {
+                                        if( i>0 ) // first node is the info about the response and city code, etc
+                                        {
+                                            int j = i-1;
+                                            info[i] = "{\"dt\"" + info[i]; // re-add the ' {"dt" ' that .split() removes so as to then use ObjectMapper
+                                            info[i] = info[i].substring(0, info[i].length()-1); // remove the ',' at the end so as to use ObjectMapper
+                                            dateNodes[j] = objMapper.readTree(info[i]);
+                                            mainNodes[j] = dateNodes[j].get("main");
+                                            weathers[j] = objMapper.treeToValue(mainNodes[j], Weather.class);
+                                            hours[j] = dateNodes[j].get("dt_txt").toString();
+                                            // posiçoes 12 e 13 - hora
+                                            //System.out.println(hours[j]);
+                                        }
+                                        //System.out.println(i + "-\t" + info[i]);
+                                    }
+
+                                    // create matrix with possible hours
+                                    for(int i=0; i<=7; i++)
+                                    {
+                                        Text hour = new Text();
+                                        switch(i)
+                                        {
+                                            case 0: hour.setText("00h"); break;
+                                            case 1: hour.setText("03h"); break;
+                                            case 2: hour.setText("06h"); break;
+                                            case 3: hour.setText("09h"); break;
+                                            case 4: hour.setText("12h"); break;
+                                            case 5: hour.setText("15h"); break;
+                                            case 6: hour.setText("18h"); break;
+                                            case 7: hour.setText("21h"); break;
+                                            default: break;
+                                        }
+                                        hour.setFont(Font.font("Verdana",FontWeight.BLACK, 14));
+                                        GridPane.setConstraints(hour, i+1, 3);
+                                        GridPane.setHalignment(hour, HPos.CENTER);
+                                        gridPane.getChildren().add(hour);
+                                    }
+
+                                    for(int i=0; i<=5; i++)
+                                    {
+                                        Text day = new Text();
+                                        switch(i)
+                                        {
+                                            case(0): day.setText(hours[0].substring(1,11)); break;
+                                            case(1): day.setText(hours[8].substring(1,11)); break;
+                                            case(2): day.setText(hours[16].substring(1,11)); break;
+                                            case(3): day.setText(hours[24].substring(1,11)); break;
+                                            case(4): day.setText(hours[32].substring(1,11)); break;
+                                            case(5): day.setText(hours[39].substring(1,11)); break;
+                                            default: break;
+                                        }
+                                        day.setFont(Font.font("Verdana", FontWeight.BLACK, 14));
+                                        GridPane.setConstraints(day, 0, i+4);
+                                        GridPane.setHalignment(day, HPos.CENTER);
+                                        gridPane.getChildren().add(day);
+                                    }
+
+                                    DecimalFormat fmt = new DecimalFormat("0.##");
+                                    int row = 0;
+                                    for(int i=0; i<N_NODES-1;i++)
+                                    {
+                                        // positions 12 and 13 have the hours of the current node
+                                        System.out.println(Integer.parseInt(hours[i].substring(12,14)));
+                                        int col = Integer.parseInt(hours[i].substring(12, 14)) / 3;
+                                        Label label = new Label(
+                                                fmt.format( weathers[i].getTemp() ).replace(',','.')
+                                        );
+                                        gridPane.getChildren().add(label);
+                                        GridPane.setConstraints(label, col+1, row+4);
+
+                                        // max 'col' is 7 because max Hour from node is 21
+                                        if( col==7 )
+                                            row++;
+                                    }
+
+                                    // Button 'back'
+                                    //Button backBtn = new Button("Back");
+                                    //GridPane.setConstraints(backBtn, );
+
+                                    rootPane.getChildren().addAll(borderPane2, gridPane);
 
 
+                                } catch (MalformedURLException e) {
+                                    e.printStackTrace();
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        });
                     }
                 });
             }

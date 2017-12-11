@@ -27,7 +27,7 @@ public class ApiCalls {
     // HTTP GET request
     private void sendGet() throws Exception {
 
-        String url = "https://api.openweathermap.org/data/2.5/weather?id=2172797&APPID=7a7620706be88fd95da0167b0f625f24";
+        String url = "https://api.openweathermap.org/data/2.5/forecast?q=bucharest,romania&APPID=7a7620706be88fd95da0167b0f625f24";
 
         URL obj = new URL(url);
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
@@ -51,9 +51,17 @@ public class ApiCalls {
         }
         in.close();
 
-        //print result
-        System.out.println(response.toString());
+        String str = response.toString();
+        String[] info = str.split("[{]\"dt\""); // split when ' {"dt" '
 
+        //print result
+        for(int i=0; i<info.length; i++){
+            if(i!=0) {
+                info[i] = "{\"dt\"" + info[i];
+                info[i] = info[i].substring(0, info[i].length()-1); //tirar a virgula no final para poder usar o ObjectMapper
+            }
+            System.out.println(i + "-\t" + info[i]);
+        }
     }
 
     // HTTP POST request

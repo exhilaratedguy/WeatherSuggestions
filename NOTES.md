@@ -4,3 +4,5 @@
 * Previsão (nao so a info atual)
 * ~~Fazer login a partir da base de dados~~
 * AccuWeather
+* caso em que se mete pw errada no log in ele diz 'user does not exist'
+* get rid of hardcoded locs
