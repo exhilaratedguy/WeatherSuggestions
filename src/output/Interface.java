@@ -368,7 +368,7 @@ public class Interface extends Application {
                             return;
                         } // ELSE BOOLEAN DE LOGGED IN A TRUE ???????????????
                         else {
-                            query += "SELECT * FROM Users WHERE email IS '" + email.getText() + "' AND password IS '" + pw.getText() + "';";
+                            query = "SELECT * FROM Users WHERE email IS '" + email.getText() + "' AND password IS '" + pw.getText() + "';";
                             // if the email/pw combo is wrong
                             if(!db.isUser(query))
                             {
@@ -582,11 +582,18 @@ public class Interface extends Application {
                                     }
 
                                     // Button 'back'
-                                    //Button backBtn = new Button("Back");
-                                    //GridPane.setConstraints(backBtn, );
+                                    Button backBtn = new Button("Back");
+                                    GridPane.setConstraints(backBtn, 0, 12);
+                                    gridPane.getChildren().add(backBtn);
 
                                     rootPane.getChildren().addAll(borderPane2, gridPane);
 
+                                    backBtn.setOnAction(new EventHandler<ActionEvent>() {
+                                        @Override
+                                        public void handle(ActionEvent event) {
+                                            stage.setScene(loggedInScene);
+                                        }
+                                    });
 
                                 } catch (MalformedURLException e) {
                                     e.printStackTrace();
