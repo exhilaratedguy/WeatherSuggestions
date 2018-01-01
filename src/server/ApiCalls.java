@@ -17,10 +17,39 @@ public class ApiCalls {
         ApiCalls http = new ApiCalls();
 
         System.out.println("Testing 1 - Send Http GET request");
-        http.sendGet();
+        http.sendGetAccu();
 
         //System.out.println("\nTesting 2 - Send Http POST request");
         //http.sendPost();
+
+    }
+    private void sendGetAccu() throws Exception {
+
+        String url = "http://dataservice.accuweather.com/locations/v1/cities/search?apikey=GhGJ8BnsA9PlCsWak4ksS51GZNLrV2H2&q=Bucharest&language=en-us&details=false&offset=0&alias=Never";
+
+        URL obj = new URL(url);
+        HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+
+        // optional default is GET
+        con.setRequestMethod("GET");
+
+        // add request header
+        con.setRequestProperty("User-Agent", USER_AGENT);
+
+        int responseCode = con.getResponseCode();
+        System.out.println("\nSending 'GET' request to URL : " + url);
+        System.out.println("Response Code : " + responseCode);
+
+        BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+        String inputLine;
+        StringBuffer response = new StringBuffer();
+
+        while( (inputLine = in.readLine()) != null ){
+            response.append(inputLine);
+        }
+        in.close();
+
+        System.out.println("\n"+response.toString());
 
     }
 
@@ -51,6 +80,7 @@ public class ApiCalls {
         }
         in.close();
 
+        /*
         String str = response.toString();
         String[] info = str.split("[{]\"dt\""); // split when ' {"dt" '
 
@@ -62,6 +92,7 @@ public class ApiCalls {
             }
             System.out.println(i + "-\t" + info[i]);
         }
+        */
     }
 
     // HTTP POST request
