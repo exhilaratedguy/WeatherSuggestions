@@ -1,15 +1,65 @@
 package database;
+import org.postgresql.util.PSQLException;
+
 import java.sql.*;
 
 
 public class MysqlConnect {
+
+    public static final String URL = "jdbc:postgres://ahvaqbaw:WDPCED8wadZj7fKWwRxSAvBOy9JmveN2@dumbo.db.elephantsql.com:5432/ahvaqbaw";
+    public static final String USER = "ahvaqbaw";
+    public static final String PW = "WDPCED8wadZj7fKWwRxSAvBOy9JmveN2";
+    public Connection c;
+
     /**
      * Connect to a sample database
      */
 
-    public MysqlConnect() {
+    public MysqlConnect() { }
+
+    public void getAll() throws SQLException{
+        try{
+            c = DriverManager.getConnection(URL, USER, PW);
+            //EXECUTE SQL COMMANDS AND LOAD RESULTS TO RESULTSET
+            Statement stmt = c.createStatement();
+            String sql = "SELECT * FROM Users";
+            ResultSet rs = stmt.executeQuery(sql);
+
+            //CURSOR OPERATIONS TO GET DATA
+            while(rs.next()){
+                String email = rs.getString("Email");
+                String name = rs.getString("Name");
+                String pw = rs.getString("Password");
+
+                System.out.println("Email: "+email+"\tName: "+name+"\t Pw: "+pw);
+            }
+
+            stmt.close();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        } finally{
+            c.close();
+        }
 
     }
+
+    public void insertInfo(String email, String name, String pw){
+        try{
+            c = DriverManager.getConnection(URL, USER, PW);
+
+            String sql = "INSERT INTO Users VALUES";
+            sql = sql + "(" + email + ", '"+ name + "', '" + pw +"');";
+
+            Statement stmt = c.createStatement();
+            stmt.executeUpdate(sql);
+            System.out.println("Successfully inserted user.");
+            c.close();
+
+        } catch(SQLException e){
+            System.out.println(e.getMessage());
+        }
+    }
+
     private Connection connect() {
         // SQLite connection string
         String url = "jdbc:sqlite:C:/Users/Acer/Desktop/UPB/Programming Paradigms/test/Paradigms.db";
