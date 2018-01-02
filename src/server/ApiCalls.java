@@ -20,10 +20,10 @@ public class ApiCalls {
 
         ApiCalls http = new ApiCalls();
 
-        http.getCurrentConditions(http.getKey("Bucharest", "Romania"));
+        //http.getCurrentConditions(http.getKey("Bucharest", "Romania"));
 
-        //System.out.println("Testing 1 - Send Http GET request");
-        //http.getKey("Bucharest", "Romania");
+        System.out.println("Testing 1 - Send Http GET request");
+        http.sendGet();
 
         //System.out.println("\nTesting 2 - Send Http POST request");
         //http.sendPost();
@@ -60,7 +60,7 @@ public class ApiCalls {
 
     }
 
-    public String getKey(String city, String country) throws Exception {
+    public String getKey(String city, String country) {
         String str = "";
         try {
             String urlString = "http://dataservice.accuweather.com/locations/v1/cities/search?apikey=" + API_KEY;
@@ -98,7 +98,7 @@ public class ApiCalls {
         return str;
     }
 
-    public String getCurrentConditions(String key) throws Exception{
+    public String getCurrentConditions(String key) {
         String json = "";
 
         try {
@@ -137,7 +137,7 @@ public class ApiCalls {
     // HTTP GET request
     public void sendGet() throws Exception {
 
-        String url = "https://api.openweathermap.org/data/2.5/forecast?q=bucharest,romania&APPID=7a7620706be88fd95da0167b0f625f24";
+        String url = "https://api.openweathermap.org/data/2.5/weather?q=bucharest,romania&APPID=7a7620706be88fd95da0167b0f625f24";
 
         URL obj = new URL(url);
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
@@ -160,6 +160,7 @@ public class ApiCalls {
             response.append(inputLine);
         }
         in.close();
+        System.out.println(response);
 
         /*
         String str = response.toString();

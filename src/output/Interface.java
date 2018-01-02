@@ -9,6 +9,7 @@ import java.net.URL;
 import java.text.DecimalFormat;
 import java.util.Stack;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import database.MysqlConnect;
@@ -29,6 +30,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.*;
 import javafx.stage.Stage;
+import server.ApiCalls;
 
 import javax.swing.*;
 
@@ -125,101 +127,98 @@ public class Interface extends Application {
                         String countryValue = country.getText();
                         String cityValue = city.getText();
 
+                        Scene tempScene = new Scene(new Group(), 310, 350);
+                        stage.setScene(tempScene);
+
+                        GridPane tempGrid = new GridPane();
+                        tempGrid.setPadding(new Insets(10));
+                        tempGrid.setVgap(25);
+                        tempGrid.setHgap(25);
+                        tempScene.setRoot(tempGrid);
+
+                        // Info Labels
+                        Label title = new Label(cityValue+", "+countryValue);
+                        title.setFont(Font.font("Verdana", FontWeight.BOLD, 22));
+                        title.setWrapText(true); // nao funciona god knows why lul
+                        GridPane.setConstraints(title, 0, 0);
+                        tempGrid.getChildren().add(title);
+
+                        Label lblTemperature = new Label();
+                        Label lblRealFeel = new Label();
+                        Label lblPrecipitation= new Label();
+                        Label lblHumidity = new Label();
+                        Label lblWindSpeed = new Label();
+
+                        // Temperature
+                        GridPane.setConstraints(lblTemperature, 0, 1);
+                        GridPane.setConstraints(lblRealFeel, 0, 2);
+                        tempGrid.getChildren().add(lblTemperature);
+                        tempGrid.getChildren().add(lblRealFeel);
+
+                        // Precipitation
+                        GridPane.setConstraints(lblPrecipitation, 0, 3);
+                        tempGrid.getChildren().add(lblPrecipitation);
+
+                        // Humidity
+                        GridPane.setConstraints(lblHumidity, 0, 4);
+                        tempGrid.getChildren().add(lblHumidity);
+
+                        // Pressure
+                        GridPane.setConstraints(lblWindSpeed, 0, 5);
+                        tempGrid.getChildren().add(lblWindSpeed);
+
+                        ApiCalls api = new ApiCalls();
+                        String json = api.getCurrentConditions(api.getKey(cityValue, countryValue));
+                        json = json.substring(1, json.length()-1);
+
+                        ObjectMapper objMapper = new ObjectMapper();
                         try {
-                            String urlString = "http://api.openweathermap.org/data/2.5/weather?q=" + cityValue + ","
-                                    + countryValue+"&APPID=7a7620706be88fd95da0167b0f625f24";
-
-                            URL url = new URL(urlString);
-                            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-                            conn.setRequestMethod("GET");
-                            conn.setRequestProperty("Accept", "application/json");
-
-                            if (conn.getResponseCode() == 404) { // wrong country/city name -- doesn't find the web page
-                                JOptionPane.showMessageDialog(null, "Wrong country/city name", "Error 404", JOptionPane.ERROR_MESSAGE);
-                                return;
-                            } else if (conn.getResponseCode() != 200) {
-                                throw new RuntimeException("Failed : HTTP error code : " + conn.getResponseCode());
-                            }
-
-                            BufferedReader br = new BufferedReader( new InputStreamReader((conn.getInputStream())) );
-
-                            Scene tempScene = new Scene(new Group(), 310, 350);
-                            stage.setScene(tempScene);
-
-                            GridPane tempGrid = new GridPane();
-                            tempGrid.setPadding(new Insets(10));
-                            tempGrid.setVgap(25);
-                            tempGrid.setHgap(25);
-                            tempScene.setRoot(tempGrid);
-
-                            // Info Labels
-                            Label title = new Label(cityValue+", "+countryValue);
-                            title.setFont(Font.font("Verdana", FontWeight.BOLD, 22));
-                            title.setWrapText(true); // nao funciona god knows why lul
-                            GridPane.setConstraints(title, 0, 0);
-                            tempGrid.getChildren().add(title);
-
-                            Label lblTemperature = new Label();
-                            Label lblTemp_min = new Label();
-                            Label lblTemp_max = new Label();
-                            Label lblHumidity = new Label();
-                            Label lblPressure = new Label();
-
-                            // Temperature
-                            GridPane.setConstraints(lblTemperature, 0, 1);
-                            GridPane.setConstraints(lblTemp_min, 0, 2);
-                            GridPane.setConstraints(lblTemp_max, 0, 3);
-                            tempGrid.getChildren().add(lblTemperature);
-                            tempGrid.getChildren().add(lblTemp_min);
-                            tempGrid.getChildren().add(lblTemp_max);
-
-                            // Humidity
-                            GridPane.setConstraints(lblHumidity, 0, 4);
-                            tempGrid.getChildren().add(lblHumidity);
-
-                            // Pressure
-                            GridPane.setConstraints(lblPressure, 0, 5);
-                            tempGrid.getChildren().add(lblPressure);
-
-                            String output;
-                            String json = "";
-                            while ( (output = br.readLine()) != null ){
-                                json += output;
-                                System.out.println(json);
-                            }
-
-                            conn.disconnect();
-
-                            ObjectMapper objMapper = new ObjectMapper();
                             JsonNode rootNode = objMapper.readTree(json);
-                            JsonNode mainNode = rootNode.get("main");
-                            Weather weather = objMapper.treeToValue(mainNode, Weather.class);
+
+                            JsonNode tempNode = rootNode.get("Temperature").get("Metric").get("Value");
+                            lblTemperature.setText("Temperature: " + tempNode.toString() + " ºC");
+
+                            tempNode = rootNode.get("RealFeelTemperature").get("Metric").get("Value");
+                            lblRealFeel.setText("Sensation: " + tempNode.toString() + " ºC");
+
+                            tempNode = rootNode.get("RelativeHumidity");
+                            lblHumidity.setText("Humidity: " + tempNode.toString());
+
+                            tempNode = rootNode.get("Wind").get("Speed").get("Metric");
+                            lblWindSpeed.setText("Wind speed: " + tempNode.toString() + " km/h");
+
+                            tempNode = rootNode.get("PrecipitationSummary").get("Precipitation").get("Metric").get("Value");
+                            lblPrecipitation.setText("Precipitation: " + tempNode.toString() + " mm");
 
 
+
+
+                            //Weather weather = objMapper.treeToValue(mainNode, Weather.class);
+
+                            /*
                             lblTemperature.setText("Temperature: " + weather.getTemp());
                             lblTemp_max.setText("Max temperature: " + weather.getTemp_max());
                             lblTemp_min.setText("Min temperature: " + weather.getTemp_min());
                             lblHumidity.setText("Humidity: " + weather.getHumidity());
                             lblPressure.setText("Pressure: " + weather.getPressure());
-
-                            // Button 'Back' -> return to main menu
-                            Button backBtn = new Button("Back");
-                            tempGrid.getChildren().add(backBtn);
-                            GridPane.setConstraints(backBtn, 0, 7);
-                            GridPane.setHalignment(backBtn, HPos.LEFT);
-
-                            backBtn.setOnAction(new EventHandler<ActionEvent>() {
-                                @Override
-                                public void handle(ActionEvent event) {
-                                    stage.setScene(mainScene);
-                                }
-                            });
-
-                        } catch (MalformedURLException e) {
-                            e.printStackTrace();
+                            */
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
+
+                        // Button 'Back' -> return to main menu
+                        Button backBtn = new Button("Back");
+                        tempGrid.getChildren().add(backBtn);
+                        GridPane.setConstraints(backBtn, 0, 7);
+                        GridPane.setHalignment(backBtn, HPos.LEFT);
+
+                        backBtn.setOnAction(new EventHandler<ActionEvent>() {
+                            @Override
+                            public void handle(ActionEvent event) {
+                                stage.setScene(mainScene);
+                            }
+                        });
+
                     }
                 });
 
