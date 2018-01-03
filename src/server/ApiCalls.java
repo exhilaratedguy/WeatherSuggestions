@@ -61,7 +61,7 @@ public class ApiCalls {
     }
 
     public String getKey(String city, String country) {
-        String str = "";
+        String str = null;
         try {
             String urlString = "http://dataservice.accuweather.com/locations/v1/cities/search?apikey=" + API_KEY;
             urlString += "&q=" + city + "%2C%20" + country;
@@ -99,7 +99,7 @@ public class ApiCalls {
     }
 
     public String getCurrentConditions(String key) {
-        String json = "";
+        String json = null;
 
         try {
             String urlString = "http://dataservice.accuweather.com/currentconditions/v1/" + key + "?apikey=";
@@ -108,8 +108,8 @@ public class ApiCalls {
             URL url = new URL(urlString);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 
-            if (conn.getResponseCode() == 404) { // wrong country/city name -- doesn't find the web page
-                JOptionPane.showMessageDialog(null, "Wrong country/city name", "Error 404", JOptionPane.ERROR_MESSAGE);
+            if (conn.getResponseCode() == 400) { // wrong country/city name
+                JOptionPane.showMessageDialog(null, "Wrong country/city name", "Error 400", JOptionPane.ERROR_MESSAGE);
                 return json;
             } else if (conn.getResponseCode() != 200) { //if response is not successful
                 throw new RuntimeException("Failed! HTTP error code : " + conn.getResponseCode());
@@ -118,7 +118,46 @@ public class ApiCalls {
             BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
 
             String output;
-            while ( (output = br.readLine()) != null && !output.equals("[]") ){
+            while ( (output = br.readLine()) != null  ){
+                json += output;
+                System.out.println(json);
+            }
+
+            conn.disconnect();
+
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return json;
+    }
+
+    public String getDaily5DaysForecast(String key){
+        String json = null;
+
+        try {
+            String urlString = "http://dataservice.accuweather.com/forecasts/v1/daily/5day/" + key + "?apikey=";
+            urlString += API_KEY + "&details=true&metric=true";
+
+            URL url = new URL(urlString);
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+
+            if (conn.getResponseCode() == 400) { // wrong country/city name
+                JOptionPane.showMessageDialog(null, "Wrong country/city name", "Error 400", JOptionPane.ERROR_MESSAGE);
+                return json;
+            } else if (conn.getResponseCode() == 503) {
+                JOptionPane.showMessageDialog(null, "AccuWeather API service is currrently unavailable.", "Error 503", JOptionPane.ERROR_MESSAGE);
+                return json;
+            } else if (conn.getResponseCode() != 200) { //if response is not successful
+                throw new RuntimeException("Failed! HTTP error code : " + conn.getResponseCode());
+            }
+
+            BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
+
+            String output;
+            while ( (output = br.readLine()) != null ){
                 json += output;
                 System.out.println(json);
             }

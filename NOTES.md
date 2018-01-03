@@ -3,7 +3,10 @@
 * ~~Ver a cena de Brasov dar mais vars e crashar a app~~
 * ~~Previsão (nao so a info atual)~~
 * ~~Fazer login a partir da base de dados~~
-* AccuWeather
+* AccuWeather:
+  * ~~Guest~~
+  * Logged in
 * ~~caso em que se mete pw errada no log in ele diz 'user does not exist'~~
 * get rid of hardcoded locs
 * clothes suggestions
+* comentar o codigo

@@ -169,7 +169,7 @@ public class Interface extends Application {
 
                         ApiCalls api = new ApiCalls();
                         String json = api.getCurrentConditions(api.getKey(cityValue, countryValue));
-                        json = json.substring(1, json.length()-1);
+                        json = json.substring(1, json.length()-1); //API returns a json node surrounded by []
 
                         ObjectMapper objMapper = new ObjectMapper();
                         try {
@@ -428,6 +428,8 @@ public class Interface extends Application {
 
                                 String countryValue = countryField.getText();
                                 String cityValue = cityField.getText();
+
+                                ApiCalls api = new ApiCalls();
 
                                 try{
                                     String urlString = "http://api.openweathermap.org/data/2.5/forecast?q="
