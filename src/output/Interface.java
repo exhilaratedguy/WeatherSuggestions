@@ -184,24 +184,11 @@ public class Interface extends Application {
                             tempNode = rootNode.get("RelativeHumidity");
                             lblHumidity.setText("Humidity: " + tempNode.toString());
 
-                            tempNode = rootNode.get("Wind").get("Speed").get("Metric");
+                            tempNode = rootNode.get("Wind").get("Speed").get("Metric").get("Value");
                             lblWindSpeed.setText("Wind speed: " + tempNode.toString() + " km/h");
 
                             tempNode = rootNode.get("PrecipitationSummary").get("Precipitation").get("Metric").get("Value");
                             lblPrecipitation.setText("Precipitation: " + tempNode.toString() + " mm");
-
-
-
-
-                            //Weather weather = objMapper.treeToValue(mainNode, Weather.class);
-
-                            /*
-                            lblTemperature.setText("Temperature: " + weather.getTemp());
-                            lblTemp_max.setText("Max temperature: " + weather.getTemp_max());
-                            lblTemp_min.setText("Min temperature: " + weather.getTemp_min());
-                            lblHumidity.setText("Humidity: " + weather.getHumidity());
-                            lblPressure.setText("Pressure: " + weather.getPressure());
-                            */
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
@@ -209,7 +196,7 @@ public class Interface extends Application {
                         // Button 'Back' -> return to main menu
                         Button backBtn = new Button("Back");
                         tempGrid.getChildren().add(backBtn);
-                        GridPane.setConstraints(backBtn, 0, 7);
+                        GridPane.setConstraints(backBtn, 0, 6);
                         GridPane.setHalignment(backBtn, HPos.LEFT);
 
                         backBtn.setOnAction(new EventHandler<ActionEvent>() {

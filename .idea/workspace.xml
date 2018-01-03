@@ -4,7 +4,6 @@
     <list default="true" id="3a301878-06b9-49b5-bcbe-754de47c728e" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/output/Interface.java" afterPath="$PROJECT_DIR$/src/output/Interface.java" />
-      <change beforePath="$PROJECT_DIR$/src/server/ApiCalls.java" afterPath="$PROJECT_DIR$/src/server/ApiCalls.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,113 +25,135 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ApiCalls.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/server/ApiCalls.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
-              <folding>
-                <element signature="method#sendGetAccu#0;class#ApiCalls#0" expanded="false" />
-                <element signature="method#getCurrentConditions#0;class#ApiCalls#0" expanded="false" />
-                <element signature="method#sendPost#0;class#ApiCalls#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Weather.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/output/Weather.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="30" column="32" lean-forward="true" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
-              <folding>
-                <element signature="e#662#663#0" expanded="true" />
-                <element signature="e#689#690#0" expanded="true" />
-                <element signature="e#728#729#0" expanded="true" />
-                <element signature="e#767#768#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Interface.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/output/Interface.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="170" column="0" lean-forward="false" selection-start-line="170" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
-              <folding>
-                <element signature="class#8945:9195" expanded="false" />
-                <element signature="e#9079#9080#0" expanded="true" />
-                <element signature="e#9168#9169#0" expanded="true" />
-                <element signature="class#9282:9493" expanded="false" />
-                <element signature="e#9400#9401#0" expanded="true" />
-                <element signature="e#9474#9475#0" expanded="true" />
-                <element signature="class#9581:12679" expanded="false" />
-                <element signature="method#handle#0;class#9581:12679" expanded="false" />
-                <element signature="class#11311:11522" expanded="false" />
-                <element signature="e#11429#11430#0" expanded="true" />
-                <element signature="e#11503#11504#0" expanded="true" />
-                <element signature="class#11566:12653" expanded="false" />
-                <element signature="method#handle#0;class#11566:12653" expanded="false" />
-                <element signature="class#14265:14476" expanded="false" />
-                <element signature="e#14383#14384#0" expanded="true" />
-                <element signature="e#14457#14458#0" expanded="true" />
-                <element signature="class#14521:29106" expanded="false" />
-                <element signature="class#18210:18539" expanded="false" />
-                <element signature="method#handle#0;class#18210:18539" expanded="false" />
-                <element signature="class#18593:29064" expanded="false" />
-                <element signature="e#23815#23841#0" expanded="false" />
-                <element signature="class#28417:28731" expanded="false" />
-                <element signature="e#28575#28576#0" expanded="true" />
-                <element signature="e#28692#28693#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NOTES.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/NOTES.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="168">
-                <caret line="8" column="21" lean-forward="false" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
-                <folding />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MysqlConnect.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/database/MysqlConnect.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#MysqlConnect#0;class#MysqlConnect#0" expanded="false" />
-                <element signature="method#getAll#0;class#MysqlConnect#0" expanded="false" />
-                <element signature="method#connect#0;class#MysqlConnect#0" expanded="false" />
-                <element signature="method#insertUser#0;class#MysqlConnect#0" expanded="false" />
-                <element signature="method#isUser#0;class#MysqlConnect#0" expanded="false" />
-                <element signature="method#getName#0;class#MysqlConnect#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestConnection.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/database/TestConnection.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="ApiCalls.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/server/ApiCalls.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="21">
+                  <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+                  <folding>
+                    <element signature="method#sendGetAccu#0;class#ApiCalls#0" expanded="false" />
+                    <element signature="method#getCurrentConditions#0;class#ApiCalls#0" expanded="false" />
+                    <element signature="method#sendPost#0;class#ApiCalls#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Weather.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/output/Weather.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="315">
+                  <caret line="30" column="32" lean-forward="false" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
+                  <folding>
+                    <element signature="e#662#663#0" expanded="true" />
+                    <element signature="e#689#690#0" expanded="true" />
+                    <element signature="e#728#729#0" expanded="true" />
+                    <element signature="e#767#768#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Interface.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/output/Interface.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1512">
+                  <caret line="304" column="12" lean-forward="false" selection-start-line="304" selection-start-column="12" selection-end-line="304" selection-end-column="12" />
+                  <folding>
+                    <element signature="class#8344:8594" expanded="false" />
+                    <element signature="e#8478#8479#0" expanded="true" />
+                    <element signature="e#8567#8568#0" expanded="true" />
+                    <element signature="class#8681:8892" expanded="false" />
+                    <element signature="e#8799#8800#0" expanded="true" />
+                    <element signature="e#8873#8874#0" expanded="true" />
+                    <element signature="class#8980:12078" expanded="false" />
+                    <element signature="method#handle#0;class#8980:12078" expanded="false" />
+                    <element signature="class#10710:10921" expanded="false" />
+                    <element signature="e#10828#10829#0" expanded="true" />
+                    <element signature="e#10902#10903#0" expanded="true" />
+                    <element signature="class#10965:12052" expanded="false" />
+                    <element signature="method#handle#0;class#10965:12052" expanded="false" />
+                    <element signature="class#13664:13875" expanded="false" />
+                    <element signature="e#13782#13783#0" expanded="true" />
+                    <element signature="e#13856#13857#0" expanded="true" />
+                    <element signature="class#13920:28505" expanded="false" />
+                    <element signature="class#17609:17938" expanded="false" />
+                    <element signature="method#handle#0;class#17609:17938" expanded="false" />
+                    <element signature="class#17992:28463" expanded="false" />
+                    <element signature="e#23214#23240#0" expanded="false" />
+                    <element signature="class#27816:28130" expanded="false" />
+                    <element signature="e#27974#27975#0" expanded="true" />
+                    <element signature="e#28091#28092#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="NOTES.md" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/NOTES.md">
+              <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+                <state split_layout="SPLIT">
+                  <first_editor relative-caret-position="168">
+                    <caret line="8" column="21" lean-forward="false" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+                    <folding />
+                  </first_editor>
+                  <second_editor />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="MysqlConnect.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/database/MysqlConnect.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="105">
+                  <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="method#MysqlConnect#0;class#MysqlConnect#0" expanded="false" />
+                    <element signature="method#getAll#0;class#MysqlConnect#0" expanded="false" />
+                    <element signature="method#connect#0;class#MysqlConnect#0" expanded="false" />
+                    <element signature="method#insertUser#0;class#MysqlConnect#0" expanded="false" />
+                    <element signature="method#isUser#0;class#MysqlConnect#0" expanded="false" />
+                    <element signature="method#getName#0;class#MysqlConnect#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="TestConnection.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/database/TestConnection.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="147">
+                  <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="Interface.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/output/Interface.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-1747">
+                  <caret line="324" column="25" lean-forward="false" selection-start-line="324" selection-start-column="25" selection-end-line="324" selection-end-column="25" />
+                  <folding>
+                    <element signature="class#13664:13875" expanded="false" />
+                    <element signature="class#17609:17938" expanded="false" />
+                    <element signature="e#23214#23240#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -202,10 +223,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -244,6 +262,9 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -507,7 +528,14 @@
       <option name="project" value="LOCAL" />
       <updated>1514914071692</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Changing API to AccuWeather">
+      <created>1514935852321</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1514935852321</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -524,18 +552,18 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281768" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32596686" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32596686" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21666667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16510417" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39889503" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39889503" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="SFDX" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -548,6 +576,39 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289183" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Log Manager" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="SFDX" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281768" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Execute Anonymous" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39889503" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Salesforce" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281768" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32596686" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16510417" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289183" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Log Manager" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -563,7 +624,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="19" />
+      <option name="time" value="21" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -573,30 +634,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="class#8945:9195" expanded="false" />
-            <element signature="e#9079#9080#0" expanded="true" />
-            <element signature="e#9168#9169#0" expanded="true" />
-            <element signature="class#9282:9493" expanded="false" />
-            <element signature="e#9400#9401#0" expanded="true" />
-            <element signature="e#9474#9475#0" expanded="true" />
-            <element signature="class#9581:12679" expanded="false" />
-            <element signature="method#handle#0;class#9581:12679" expanded="false" />
-            <element signature="class#11311:11522" expanded="false" />
-            <element signature="e#11429#11430#0" expanded="true" />
-            <element signature="e#11503#11504#0" expanded="true" />
-            <element signature="class#11566:12653" expanded="false" />
-            <element signature="method#handle#0;class#11566:12653" expanded="false" />
-            <element signature="class#14265:14476" expanded="false" />
-            <element signature="e#14383#14384#0" expanded="true" />
-            <element signature="e#14457#14458#0" expanded="true" />
-            <element signature="class#14521:29106" expanded="false" />
-            <element signature="class#18210:18539" expanded="false" />
-            <element signature="method#handle#0;class#18210:18539" expanded="false" />
-            <element signature="class#18593:29064" expanded="false" />
-            <element signature="e#23815#23841#0" expanded="false" />
-            <element signature="class#28417:28731" expanded="false" />
-            <element signature="e#28575#28576#0" expanded="true" />
-            <element signature="e#28692#28693#0" expanded="true" />
+            <element signature="class#13664:13875" expanded="false" />
+            <element signature="class#17609:17938" expanded="false" />
+            <element signature="e#23214#23240#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -656,30 +696,9 @@
         <state relative-caret-position="1806">
           <caret line="113" column="55" lean-forward="true" selection-start-line="113" selection-start-column="55" selection-end-line="113" selection-end-column="55" />
           <folding>
-            <element signature="class#8945:9195" expanded="false" />
-            <element signature="e#9079#9080#0" expanded="true" />
-            <element signature="e#9168#9169#0" expanded="true" />
-            <element signature="class#9282:9493" expanded="false" />
-            <element signature="e#9400#9401#0" expanded="true" />
-            <element signature="e#9474#9475#0" expanded="true" />
-            <element signature="class#9581:12679" expanded="false" />
-            <element signature="method#handle#0;class#9581:12679" expanded="false" />
-            <element signature="class#11311:11522" expanded="false" />
-            <element signature="e#11429#11430#0" expanded="true" />
-            <element signature="e#11503#11504#0" expanded="true" />
-            <element signature="class#11566:12653" expanded="false" />
-            <element signature="method#handle#0;class#11566:12653" expanded="false" />
-            <element signature="class#14265:14476" expanded="false" />
-            <element signature="e#14383#14384#0" expanded="true" />
-            <element signature="e#14457#14458#0" expanded="true" />
-            <element signature="class#14521:29106" expanded="false" />
-            <element signature="class#18210:18539" expanded="false" />
-            <element signature="method#handle#0;class#18210:18539" expanded="false" />
-            <element signature="class#18593:29064" expanded="false" />
-            <element signature="e#23815#23841#0" expanded="false" />
-            <element signature="class#28417:28731" expanded="false" />
-            <element signature="e#28575#28576#0" expanded="true" />
-            <element signature="e#28692#28693#0" expanded="true" />
+            <element signature="class#13664:13875" expanded="false" />
+            <element signature="class#17609:17938" expanded="false" />
+            <element signature="e#23214#23240#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -794,30 +813,9 @@
         <state relative-caret-position="1764">
           <caret line="84" column="112" lean-forward="true" selection-start-line="84" selection-start-column="112" selection-end-line="84" selection-end-column="112" />
           <folding>
-            <element signature="class#8945:9195" expanded="false" />
-            <element signature="e#9079#9080#0" expanded="true" />
-            <element signature="e#9168#9169#0" expanded="true" />
-            <element signature="class#9282:9493" expanded="false" />
-            <element signature="e#9400#9401#0" expanded="true" />
-            <element signature="e#9474#9475#0" expanded="true" />
-            <element signature="class#9581:12679" expanded="false" />
-            <element signature="method#handle#0;class#9581:12679" expanded="false" />
-            <element signature="class#11311:11522" expanded="false" />
-            <element signature="e#11429#11430#0" expanded="true" />
-            <element signature="e#11503#11504#0" expanded="true" />
-            <element signature="class#11566:12653" expanded="false" />
-            <element signature="method#handle#0;class#11566:12653" expanded="false" />
-            <element signature="class#14265:14476" expanded="false" />
-            <element signature="e#14383#14384#0" expanded="true" />
-            <element signature="e#14457#14458#0" expanded="true" />
-            <element signature="class#14521:29106" expanded="false" />
-            <element signature="class#18210:18539" expanded="false" />
-            <element signature="method#handle#0;class#18210:18539" expanded="false" />
-            <element signature="class#18593:29064" expanded="false" />
-            <element signature="e#23815#23841#0" expanded="false" />
-            <element signature="class#28417:28731" expanded="false" />
-            <element signature="e#28575#28576#0" expanded="true" />
-            <element signature="e#28692#28693#0" expanded="true" />
+            <element signature="class#13664:13875" expanded="false" />
+            <element signature="class#17609:17938" expanded="false" />
+            <element signature="e#23214#23240#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -852,30 +850,9 @@
         <state relative-caret-position="1848">
           <caret line="109" column="26" lean-forward="false" selection-start-line="109" selection-start-column="26" selection-end-line="109" selection-end-column="26" />
           <folding>
-            <element signature="class#8945:9195" expanded="false" />
-            <element signature="e#9079#9080#0" expanded="true" />
-            <element signature="e#9168#9169#0" expanded="true" />
-            <element signature="class#9282:9493" expanded="false" />
-            <element signature="e#9400#9401#0" expanded="true" />
-            <element signature="e#9474#9475#0" expanded="true" />
-            <element signature="class#9581:12679" expanded="false" />
-            <element signature="method#handle#0;class#9581:12679" expanded="false" />
-            <element signature="class#11311:11522" expanded="false" />
-            <element signature="e#11429#11430#0" expanded="true" />
-            <element signature="e#11503#11504#0" expanded="true" />
-            <element signature="class#11566:12653" expanded="false" />
-            <element signature="method#handle#0;class#11566:12653" expanded="false" />
-            <element signature="class#14265:14476" expanded="false" />
-            <element signature="e#14383#14384#0" expanded="true" />
-            <element signature="e#14457#14458#0" expanded="true" />
-            <element signature="class#14521:29106" expanded="false" />
-            <element signature="class#18210:18539" expanded="false" />
-            <element signature="method#handle#0;class#18210:18539" expanded="false" />
-            <element signature="class#18593:29064" expanded="false" />
-            <element signature="e#23815#23841#0" expanded="false" />
-            <element signature="class#28417:28731" expanded="false" />
-            <element signature="e#28575#28576#0" expanded="true" />
-            <element signature="e#28692#28693#0" expanded="true" />
+            <element signature="class#13664:13875" expanded="false" />
+            <element signature="class#17609:17938" expanded="false" />
+            <element signature="e#23214#23240#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -941,30 +918,9 @@
         <state relative-caret-position="1848">
           <caret line="109" column="26" lean-forward="false" selection-start-line="109" selection-start-column="26" selection-end-line="109" selection-end-column="26" />
           <folding>
-            <element signature="class#8945:9195" expanded="false" />
-            <element signature="e#9079#9080#0" expanded="true" />
-            <element signature="e#9168#9169#0" expanded="true" />
-            <element signature="class#9282:9493" expanded="false" />
-            <element signature="e#9400#9401#0" expanded="true" />
-            <element signature="e#9474#9475#0" expanded="true" />
-            <element signature="class#9581:12679" expanded="false" />
-            <element signature="method#handle#0;class#9581:12679" expanded="false" />
-            <element signature="class#11311:11522" expanded="false" />
-            <element signature="e#11429#11430#0" expanded="true" />
-            <element signature="e#11503#11504#0" expanded="true" />
-            <element signature="class#11566:12653" expanded="false" />
-            <element signature="method#handle#0;class#11566:12653" expanded="false" />
-            <element signature="class#14265:14476" expanded="false" />
-            <element signature="e#14383#14384#0" expanded="true" />
-            <element signature="e#14457#14458#0" expanded="true" />
-            <element signature="class#14521:29106" expanded="false" />
-            <element signature="class#18210:18539" expanded="false" />
-            <element signature="method#handle#0;class#18210:18539" expanded="false" />
-            <element signature="class#18593:29064" expanded="false" />
-            <element signature="e#23815#23841#0" expanded="false" />
-            <element signature="class#28417:28731" expanded="false" />
-            <element signature="e#28575#28576#0" expanded="true" />
-            <element signature="e#28692#28693#0" expanded="true" />
+            <element signature="class#13664:13875" expanded="false" />
+            <element signature="class#17609:17938" expanded="false" />
+            <element signature="e#23214#23240#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1029,30 +985,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="class#8945:9195" expanded="false" />
-            <element signature="e#9079#9080#0" expanded="true" />
-            <element signature="e#9168#9169#0" expanded="true" />
-            <element signature="class#9282:9493" expanded="false" />
-            <element signature="e#9400#9401#0" expanded="true" />
-            <element signature="e#9474#9475#0" expanded="true" />
-            <element signature="class#9581:12679" expanded="false" />
-            <element signature="method#handle#0;class#9581:12679" expanded="false" />
-            <element signature="class#11311:11522" expanded="false" />
-            <element signature="e#11429#11430#0" expanded="true" />
-            <element signature="e#11503#11504#0" expanded="true" />
-            <element signature="class#11566:12653" expanded="false" />
-            <element signature="method#handle#0;class#11566:12653" expanded="false" />
-            <element signature="class#14265:14476" expanded="false" />
-            <element signature="e#14383#14384#0" expanded="true" />
-            <element signature="e#14457#14458#0" expanded="true" />
-            <element signature="class#14521:29106" expanded="false" />
-            <element signature="class#18210:18539" expanded="false" />
-            <element signature="method#handle#0;class#18210:18539" expanded="false" />
-            <element signature="class#18593:29064" expanded="false" />
-            <element signature="e#23815#23841#0" expanded="false" />
-            <element signature="class#28417:28731" expanded="false" />
-            <element signature="e#28575#28576#0" expanded="true" />
-            <element signature="e#28692#28693#0" expanded="true" />
+            <element signature="class#13664:13875" expanded="false" />
+            <element signature="class#17609:17938" expanded="false" />
+            <element signature="e#23214#23240#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1087,30 +1022,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="class#8945:9195" expanded="false" />
-            <element signature="e#9079#9080#0" expanded="true" />
-            <element signature="e#9168#9169#0" expanded="true" />
-            <element signature="class#9282:9493" expanded="false" />
-            <element signature="e#9400#9401#0" expanded="true" />
-            <element signature="e#9474#9475#0" expanded="true" />
-            <element signature="class#9581:12679" expanded="false" />
-            <element signature="method#handle#0;class#9581:12679" expanded="false" />
-            <element signature="class#11311:11522" expanded="false" />
-            <element signature="e#11429#11430#0" expanded="true" />
-            <element signature="e#11503#11504#0" expanded="true" />
-            <element signature="class#11566:12653" expanded="false" />
-            <element signature="method#handle#0;class#11566:12653" expanded="false" />
-            <element signature="class#14265:14476" expanded="false" />
-            <element signature="e#14383#14384#0" expanded="true" />
-            <element signature="e#14457#14458#0" expanded="true" />
-            <element signature="class#14521:29106" expanded="false" />
-            <element signature="class#18210:18539" expanded="false" />
-            <element signature="method#handle#0;class#18210:18539" expanded="false" />
-            <element signature="class#18593:29064" expanded="false" />
-            <element signature="e#23815#23841#0" expanded="false" />
-            <element signature="class#28417:28731" expanded="false" />
-            <element signature="e#28575#28576#0" expanded="true" />
-            <element signature="e#28692#28693#0" expanded="true" />
+            <element signature="class#13664:13875" expanded="false" />
+            <element signature="class#17609:17938" expanded="false" />
+            <element signature="e#23214#23240#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1120,30 +1034,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="class#8945:9195" expanded="false" />
-            <element signature="e#9079#9080#0" expanded="true" />
-            <element signature="e#9168#9169#0" expanded="true" />
-            <element signature="class#9282:9493" expanded="false" />
-            <element signature="e#9400#9401#0" expanded="true" />
-            <element signature="e#9474#9475#0" expanded="true" />
-            <element signature="class#9581:12679" expanded="false" />
-            <element signature="method#handle#0;class#9581:12679" expanded="false" />
-            <element signature="class#11311:11522" expanded="false" />
-            <element signature="e#11429#11430#0" expanded="true" />
-            <element signature="e#11503#11504#0" expanded="true" />
-            <element signature="class#11566:12653" expanded="false" />
-            <element signature="method#handle#0;class#11566:12653" expanded="false" />
-            <element signature="class#14265:14476" expanded="false" />
-            <element signature="e#14383#14384#0" expanded="true" />
-            <element signature="e#14457#14458#0" expanded="true" />
-            <element signature="class#14521:29106" expanded="false" />
-            <element signature="class#18210:18539" expanded="false" />
-            <element signature="method#handle#0;class#18210:18539" expanded="false" />
-            <element signature="class#18593:29064" expanded="false" />
-            <element signature="e#23815#23841#0" expanded="false" />
-            <element signature="class#28417:28731" expanded="false" />
-            <element signature="e#28575#28576#0" expanded="true" />
-            <element signature="e#28692#28693#0" expanded="true" />
+            <element signature="class#13664:13875" expanded="false" />
+            <element signature="class#17609:17938" expanded="false" />
+            <element signature="e#23214#23240#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1220,7 +1113,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/database/MysqlConnect.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
+        <state relative-caret-position="105">
           <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1236,8 +1129,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/output/Weather.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="30" column="32" lean-forward="true" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
+        <state relative-caret-position="315">
+          <caret line="30" column="32" lean-forward="false" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
           <folding>
             <element signature="e#662#663#0" expanded="true" />
             <element signature="e#689#690#0" expanded="true" />
@@ -1247,47 +1140,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/output/Interface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="170" column="0" lean-forward="false" selection-start-line="170" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
-          <folding>
-            <element signature="class#8945:9195" expanded="false" />
-            <element signature="e#9079#9080#0" expanded="true" />
-            <element signature="e#9168#9169#0" expanded="true" />
-            <element signature="class#9282:9493" expanded="false" />
-            <element signature="e#9400#9401#0" expanded="true" />
-            <element signature="e#9474#9475#0" expanded="true" />
-            <element signature="class#9581:12679" expanded="false" />
-            <element signature="method#handle#0;class#9581:12679" expanded="false" />
-            <element signature="class#11311:11522" expanded="false" />
-            <element signature="e#11429#11430#0" expanded="true" />
-            <element signature="e#11503#11504#0" expanded="true" />
-            <element signature="class#11566:12653" expanded="false" />
-            <element signature="method#handle#0;class#11566:12653" expanded="false" />
-            <element signature="class#14265:14476" expanded="false" />
-            <element signature="e#14383#14384#0" expanded="true" />
-            <element signature="e#14457#14458#0" expanded="true" />
-            <element signature="class#14521:29106" expanded="false" />
-            <element signature="class#18210:18539" expanded="false" />
-            <element signature="method#handle#0;class#18210:18539" expanded="false" />
-            <element signature="class#18593:29064" expanded="false" />
-            <element signature="e#23815#23841#0" expanded="false" />
-            <element signature="class#28417:28731" expanded="false" />
-            <element signature="e#28575#28576#0" expanded="true" />
-            <element signature="e#28692#28693#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/server/ApiCalls.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
+        <state relative-caret-position="21">
           <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
           <folding>
             <element signature="method#sendGetAccu#0;class#ApiCalls#0" expanded="false" />
             <element signature="method#getCurrentConditions#0;class#ApiCalls#0" expanded="false" />
             <element signature="method#sendPost#0;class#ApiCalls#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/output/Interface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1747">
+          <caret line="324" column="25" lean-forward="false" selection-start-line="324" selection-start-column="25" selection-end-line="324" selection-end-column="25" />
+          <folding>
+            <element signature="class#13664:13875" expanded="false" />
+            <element signature="class#17609:17938" expanded="false" />
+            <element signature="e#23214#23240#0" expanded="false" />
           </folding>
         </state>
       </provider>
