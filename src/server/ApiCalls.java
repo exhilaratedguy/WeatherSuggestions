@@ -14,7 +14,7 @@ import javax.swing.*;
 public class ApiCalls {
 
     private final String USER_AGENT = "Mozilla/5.0";
-    private final String API_KEY = "KG7i0YYnfRAAgWcIDYLqDLr5gAFpjJsw";
+    private final String API_KEY = "09N4KpiFMUWtcGQo4Hdd8fiKUGPGG96T";
 
     public static void main(String[] args) throws Exception {
 
@@ -71,7 +71,7 @@ public class ApiCalls {
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 
             if (conn.getResponseCode() == 404) { // wrong country/city name -- doesn't find the web page
-                JOptionPane.showMessageDialog(null, "Wrong country/city name", "Error 404", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Wrong country/city name1111111111", "Error 404", JOptionPane.ERROR_MESSAGE);
                 return str;
             } else if (conn.getResponseCode() != 200) { //if response is not successful
                 throw new RuntimeException("Failed! HTTP error code : " + conn.getResponseCode());
@@ -109,7 +109,7 @@ public class ApiCalls {
             URL url = new URL(urlString);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 
-            if (conn.getResponseCode() == 400) { // wrong country/city name
+            if (conn.getResponseCode() == 404) { // wrong country/city name
                 JOptionPane.showMessageDialog(null, "Wrong country/city name", "Error 400", JOptionPane.ERROR_MESSAGE);
                 return json;
             } else if (conn.getResponseCode() != 200) { //if response is not successful

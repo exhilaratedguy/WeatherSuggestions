@@ -26,10 +26,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.scene.text.*;
 import javafx.stage.Stage;
 import server.ApiCalls;
@@ -68,6 +65,7 @@ public class Interface extends Application {
         bPane.setTop(wel);
         BorderPane.setAlignment(wel, Pos.CENTER);
 
+        stage.centerOnScreen();
         stage.show();
 
         // Button 'guest'
@@ -130,68 +128,78 @@ public class Interface extends Application {
                         String countryValue = country.getText();
                         String cityValue = city.getText();
 
+                        //new Scene
                         Scene tempScene = new Scene(new Group(), 310, 350);
-                        stage.setScene(tempScene);
+
+                        //root pane
+                        StackPane rootPane = new StackPane();
+                        rootPane.setPadding(new Insets(10));
+                        tempScene.setRoot(rootPane);
+
+                        //BorderPane to be able to set a Label centered at the top of the window
+                        BorderPane bPane = new BorderPane();
 
                         GridPane tempGrid = new GridPane();
                         tempGrid.setPadding(new Insets(10));
-                        tempGrid.setVgap(25);
-                        tempGrid.setHgap(25);
-                        tempScene.setRoot(tempGrid);
+                        tempGrid.setVgap(20);
+                        tempGrid.setHgap(20);
 
-                        // Info Labels
+                        // Title
                         Label title = new Label(cityValue+", "+countryValue);
                         title.setFont(Font.font("Verdana", FontWeight.BOLD, 22));
-                        title.setWrapText(true); // nao funciona god knows why lul
-                        GridPane.setConstraints(title, 0, 0);
-                        tempGrid.getChildren().add(title);
+                        bPane.setTop(title);
+                        BorderPane.setAlignment(title, Pos.CENTER);
 
-                        Label lblTemperature = new Label();
-                        Label lblRealFeel = new Label();
-                        Label lblPrecipitation= new Label();
-                        Label lblHumidity = new Label();
-                        Label lblWindSpeed = new Label();
-
-                        // Temperature
-                        GridPane.setConstraints(lblTemperature, 0, 1);
-                        GridPane.setConstraints(lblRealFeel, 0, 2);
-                        tempGrid.getChildren().add(lblTemperature);
-                        tempGrid.getChildren().add(lblRealFeel);
-
-                        // Precipitation
-                        GridPane.setConstraints(lblPrecipitation, 0, 3);
-                        tempGrid.getChildren().add(lblPrecipitation);
-
-                        // Humidity
-                        GridPane.setConstraints(lblHumidity, 0, 4);
-                        tempGrid.getChildren().add(lblHumidity);
-
-                        // Pressure
-                        GridPane.setConstraints(lblWindSpeed, 0, 5);
-                        tempGrid.getChildren().add(lblWindSpeed);
+                        // Creating and adding labels for the first column in gridpane
+                        for(int i=0; i<5; i++)
+                        {
+                            Label text = new Label();
+                            switch(i)
+                            {
+                                case(0): text.setText("Temperature:"); break;
+                                case(1): text.setText("Sensation:"); break;
+                                case(2): text.setText("Precipitation:"); break;
+                                case(3): text.setText("Humidity:"); break;
+                                case(4): text.setText("Wind speed:"); break;
+                                default: break;
+                            }
+                            GridPane.setConstraints(text, 0, i+2);
+                            GridPane.setHalignment(text, HPos.RIGHT);
+                            tempGrid.getChildren().add(text);
+                        }
 
                         ApiCalls api = new ApiCalls();
                         String json = api.getCurrentConditions(api.getKey(cityValue, countryValue));
-                        json = json.substring(1, json.length()-1); //API returns a json node surrounded by []
 
+                        if(json.isEmpty()) {
+                            return;
+                        }
+
+                        stage.setScene(tempScene);
+
+                        json = json.substring(1, json.length()-1); //API returns a json node surrounded by []
                         ObjectMapper objMapper = new ObjectMapper();
                         try {
                             JsonNode rootNode = objMapper.readTree(json);
 
-                            JsonNode tempNode = rootNode.get("Temperature").get("Metric").get("Value");
-                            lblTemperature.setText("Temperature: " + tempNode.toString() + " ºC");
+                            for(int i=0; i<5; i++)
+                            {
+                                JsonNode tempNode = rootNode;
+                                Label text = new Label();
+                                switch(i)
+                                {
+                                    case(0): text.setText(tempNode.get("Temperature").get("Metric").get("Value").toString() + " ºC"); break;
+                                    case(1): text.setText(tempNode.get("RealFeelTemperature").get("Metric").get("Value").toString() + " ºC"); break;
+                                    case(2): text.setText(tempNode.get("PrecipitationSummary").get("Precipitation").get("Metric").get("Value").toString() + " mm"); break;
+                                    case(3): text.setText(tempNode.get("RelativeHumidity").toString() + "%"); break;
+                                    case(4): text.setText(tempNode.get("Wind").get("Speed").get("Metric").get("Value").toString() + " km/h"); break;
+                                    default: break;
+                                }
+                                GridPane.setConstraints(text, 1, i+2);
+                                GridPane.setHalignment(text, HPos.LEFT);
+                                tempGrid.getChildren().add(text);
+                            }
 
-                            tempNode = rootNode.get("RealFeelTemperature").get("Metric").get("Value");
-                            lblRealFeel.setText("Sensation: " + tempNode.toString() + " ºC");
-
-                            tempNode = rootNode.get("RelativeHumidity");
-                            lblHumidity.setText("Humidity: " + tempNode.toString());
-
-                            tempNode = rootNode.get("Wind").get("Speed").get("Metric").get("Value");
-                            lblWindSpeed.setText("Wind speed: " + tempNode.toString() + " km/h");
-
-                            tempNode = rootNode.get("PrecipitationSummary").get("Precipitation").get("Metric").get("Value");
-                            lblPrecipitation.setText("Precipitation: " + tempNode.toString() + " mm");
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
@@ -199,8 +207,10 @@ public class Interface extends Application {
                         // Button 'Back' -> return to main menu
                         Button backBtn = new Button("Back");
                         tempGrid.getChildren().add(backBtn);
-                        GridPane.setConstraints(backBtn, 0, 6);
+                        GridPane.setConstraints(backBtn, 0, 8);
                         GridPane.setHalignment(backBtn, HPos.LEFT);
+
+                        rootPane.getChildren().addAll(bPane, tempGrid);
 
                         backBtn.setOnAction(new EventHandler<ActionEvent>() {
                             @Override
@@ -432,8 +442,9 @@ public class Interface extends Application {
                                 String cityValue = cityField.getText();
 
                                 // new Scene
-                                Scene forecastScene = new Scene(new Group(), 900, 450);
+                                Scene forecastScene = new Scene(new Group(), 1100, 450);
                                 stage.setScene(forecastScene);
+                                stage.centerOnScreen();
 
                                 // root pane
                                 StackPane rootPane = new StackPane();
@@ -453,7 +464,7 @@ public class Interface extends Application {
                                 GridPane gridPane = new GridPane();
                                 gridPane.setPadding(new Insets(10));
                                 gridPane.setVgap(20);
-                                gridPane.setHgap(20);
+                                //gridPane.setHgap(20);
 
                                 ApiCalls api = new ApiCalls();
                                 String json = api.getDaily5DaysForecast(api.getKey(cityValue, countryValue));
@@ -483,7 +494,7 @@ public class Interface extends Application {
                                     //Adding the dates over each column of the matrix
                                     for(int i=0; i<n_nodes; i++)
                                     {
-                                        Text day = new Text();
+                                        Label day = new Label();
 
                                         JsonNode tempNode = objMapper.readTree(date[i]);
                                         tempNode = tempNode.get("Date");
@@ -500,7 +511,7 @@ public class Interface extends Application {
                                     //Adding the descriptions for each row of the matrix
                                     for(int i=0; i<4; i++)
                                     {
-                                        Text text = new Text();
+                                        Label text = new Label();
                                         switch(i)
                                         {
                                             case(0): text.setText("Max temp:"); break;
@@ -515,12 +526,14 @@ public class Interface extends Application {
                                         gridPane.getChildren().add(text);
                                     }
 
+                                    //Adding the forecast info to the matrix
                                     for(int col=0; col<n_nodes; col++)
                                     {
+                                        //Creating a JsonNode for the current day so as to use the 'switch' below
                                         JsonNode tempNode = objMapper.readTree(date[col]);
                                         for(int row=0; row<4; row++)
                                         {
-                                            Text text = new Text();
+                                            Label text = new Label();
                                             switch (row)
                                             {
                                                 case(0): text.setText(tempNode.get("Temperature").get("Maximum").get("Value")+" ºC"); break;
@@ -539,70 +552,24 @@ public class Interface extends Application {
                                             gridPane.getChildren().add(text);
                                         }
                                     }
+                                    ColumnConstraints firstCol = new ColumnConstraints(90);
+                                    ColumnConstraints otherCols = new ColumnConstraints();
 
+                                    // divide the space equally by the columns with the forecast info (from the 2nd onwards)
+                                    otherCols.setPrefWidth( (stage.getWidth()-firstCol.getPrefWidth())/5.0 );
 
-
-
-
-
-
+                                    gridPane.getColumnConstraints().addAll(firstCol, otherCols, otherCols, otherCols, otherCols, otherCols);
 
                                 } catch (IOException e) {
                                     e.printStackTrace();
                                 }
-
-                                /*
-
-                                Label[] times = new Label[n_nodes-1];
-                                //ObjectMapper objMapper = new ObjectMapper();
-                                JsonNode[] dateNodes = new JsonNode[n_nodes-1];
-                                JsonNode[] mainNodes = new JsonNode[n_nodes-1];
-                                Weather[] weathers = new Weather[n_nodes-1];
-                                String[] hours = new String[n_nodes-1];
-
-                                for(int i=0; i<n_nodes; i++)
-                                {
-                                    if( i>0 ) // first node is the info about the response and city code, etc
-                                    {
-                                        int j = i-1;
-                                        info[i] = "{\"dt\"" + info[i]; // re-add the ' {"dt" ' that .split() removes so as to then use ObjectMapper
-                                        info[i] = info[i].substring(0, info[i].length()-1); // remove the ',' at the end so as to use ObjectMapper
-                                        //dateNodes[j] = objMapper.readTree(info[i]);
-                                        mainNodes[j] = dateNodes[j].get("main");
-                                       // weathers[j] = objMapper.treeToValue(mainNodes[j], Weather.class);
-                                        hours[j] = dateNodes[j].get("dt_txt").toString();
-                                        // posiçoes 12 e 13 - hora
-                                        //System.out.println(hours[j]);
-                                    }
-                                    //System.out.println(i + "-\t" + info[i]);
-                                }
-
-
-                                DecimalFormat fmt = new DecimalFormat("0.##");
-                                int row = 0;
-                                for(int i=0; i<n_nodes-1;i++)
-                                {
-                                    // positions 12 and 13 have the hours of the current node
-                                    System.out.println(Integer.parseInt(hours[i].substring(12,14)));
-                                    int col = Integer.parseInt(hours[i].substring(12, 14)) / 3;
-                                    Label label = new Label(
-                                            fmt.format( weathers[i].getTemp() ).replace(',','.')
-                                    );
-                                    gridPane.getChildren().add(label);
-                                    GridPane.setConstraints(label, col+1, row+4);
-
-                                    // max 'col' is 7 because max Hour from node is 21
-                                    if( col==7 )
-                                        row++;
-                                }
-                                */
 
                                 // Button 'back'
                                 Button backBtn = new Button("Back");
                                 GridPane.setConstraints(backBtn, 0, 12);
                                 gridPane.getChildren().add(backBtn);
 
-                                rootPane.getChildren().addAll(borderPane2, gridPane);
+                                rootPane.getChildren().addAll( borderPane2, new VBox(gridPane) );
 
                                 backBtn.setOnAction(new EventHandler<ActionEvent>() {
                                     @Override

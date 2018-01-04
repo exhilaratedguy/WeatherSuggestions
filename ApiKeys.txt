@@ -1,3 +1,10 @@
+AccuWeather's API free plan only allows up to 50 calls per day and only one API key per account.
+As such, multiple accounts were created for multiple keys in order to successfully test and debug the app during the coding process.
+
 GhGJ8BnsA9PlCsWak4ksS51GZNLrV2H2
 
 KG7i0YYnfRAAgWcIDYLqDLr5gAFpjJsw
+
+PyAYam33JM6tUR4gAH8vIzKqBlzyVfzD
+
+09N4KpiFMUWtcGQo4Hdd8fiKUGPGG96T

@@ -6,10 +6,11 @@ import java.sql.*;
 
 public class MysqlConnect {
 
-    public static final String URL = "jdbc:postgres://ahvaqbaw:WDPCED8wadZj7fKWwRxSAvBOy9JmveN2@dumbo.db.elephantsql.com:5432/ahvaqbaw";
-    public static final String USER = "ahvaqbaw";
-    public static final String PW = "WDPCED8wadZj7fKWwRxSAvBOy9JmveN2";
-    public Connection c;
+    private static final String URL = "jdbc:postgres://ahvaqbaw:WDPCED8wadZj7fKWwRxSAvBOy9JmveN2@dumbo.db.elephantsql.com:5432/ahvaqbaw";
+    private static final String USER = "ahvaqbaw";
+    private static final String PW = "WDPCED8wadZj7fKWwRxSAvBOy9JmveN2";
+    private static final String PATH = "C:/Users/Acer/Desktop/UPB/Programming Paradigms/test/Paradigms.db";
+    private Connection c;
 
     /**
      * Connect to a sample database
@@ -62,7 +63,7 @@ public class MysqlConnect {
 
     private Connection connect() {
         // SQLite connection string
-        String url = "jdbc:sqlite:C:/Users/Acer/Desktop/UPB/Programming Paradigms/test/Paradigms.db";
+        String url = "jdbc:sqlite:" + PATH;
         Connection conn = null;
         try {
             conn = DriverManager.getConnection(url);
