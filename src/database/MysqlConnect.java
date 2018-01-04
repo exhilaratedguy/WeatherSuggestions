@@ -85,7 +85,7 @@ public class MysqlConnect {
                 pstmt.setString(2, email);
                 pstmt.setString(3, password);
                 pstmt.executeUpdate();
-                System.out.println("User Inserted.");
+                //System.out.println("User Inserted.");
 
             }
         } catch (SQLException e) {

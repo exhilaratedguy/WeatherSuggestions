@@ -14,7 +14,7 @@ import javax.swing.*;
 public class ApiCalls {
 
     private final String USER_AGENT = "Mozilla/5.0";
-    private final String API_KEY = "09N4KpiFMUWtcGQo4Hdd8fiKUGPGG96T";
+    private final String API_KEY = "GhGJ8BnsA9PlCsWak4ksS51GZNLrV2H2";
 
     public static void main(String[] args) throws Exception {
 
@@ -140,6 +140,45 @@ public class ApiCalls {
 
         try {
             String urlString = "http://dataservice.accuweather.com/forecasts/v1/daily/5day/" + key + "?apikey=";
+            urlString += API_KEY + "&details=true&metric=true";
+
+            URL url = new URL(urlString);
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+
+            if (conn.getResponseCode() == 400) { // wrong country/city name
+                JOptionPane.showMessageDialog(null, "Wrong country/city name", "Error 400", JOptionPane.ERROR_MESSAGE);
+                return json;
+            } else if (conn.getResponseCode() == 503) {
+                JOptionPane.showMessageDialog(null, "AccuWeather API service is currrently unavailable.", "Error 503", JOptionPane.ERROR_MESSAGE);
+                return json;
+            } else if (conn.getResponseCode() != 200) { //if response is not successful
+                throw new RuntimeException("Failed! HTTP error code : " + conn.getResponseCode());
+            }
+
+            BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
+
+            String output;
+            while ( (output = br.readLine()) != null ){
+                json += output;
+                //System.out.println(json);
+            }
+
+            conn.disconnect();
+
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return json;
+    }
+
+    public String getHourly12HoursForecast(String key){
+        String json = "";
+
+        try {
+            String urlString = "http://dataservice.accuweather.com/forecasts/v1/hourly/12hour/" + key + "?apikey=";
             urlString += API_KEY + "&details=true&metric=true";
 
             URL url = new URL(urlString);

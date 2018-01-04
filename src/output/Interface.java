@@ -384,7 +384,7 @@ public class Interface extends Application {
                         loggedInScene.setRoot(rootPane);
                         stage.setScene(loggedInScene);
 
-                        // BorderPane to be able to set a Text centered at the top of the window
+                        // BorderPane to be able to set a Text centered at the top of the window and 'Log out' button on the bottom left
                         BorderPane borderPane = new BorderPane();
 
                         // 'Hello <name>'
@@ -393,38 +393,26 @@ public class Interface extends Application {
                         borderPane.setTop(name);
                         BorderPane.setAlignment(name, Pos.CENTER);
 
-                        //GridPane
-                        GridPane gridPane = new GridPane();
-                        gridPane.setVgap(20);
-                        gridPane.setHgap(20);
-
-                        // Country Name
-                        TextField countryField = new TextField();
-                        countryField.setPromptText("Country Name");
-                        countryField.setPrefColumnCount(20);
-                        countryField.setPrefHeight(20);
-
-                        // City Name
-                        TextField cityField = new TextField();
-                        cityField.setPromptText("City Name");
-                        cityField.setPrefHeight(20);
-                        cityField.setPrefColumnCount(20);
-
                         // Button 'Log out'
                         Button logOutBtn = new Button("Log out");
-                        GridPane.setHalignment(logOutBtn, HPos.LEFT);
+                        borderPane.setBottom(logOutBtn);
 
-                        // Button 'Search'
-                        Button searchBtn = new Button("Search");
-                        GridPane.setHalignment(searchBtn, HPos.RIGHT);
+                        // VBox to have the buttons easily centered
+                        VBox vBox = new VBox(20);
+                        vBox.setAlignment(Pos.CENTER);
 
-                        rootPane.getChildren().addAll(borderPane, gridPane);
+                        // Adding the BorderPane and VBox to the StackPane
+                        rootPane.getChildren().addAll(borderPane, vBox);
 
-                        gridPane.getChildren().addAll(countryField, cityField, logOutBtn, searchBtn);
-                        GridPane.setConstraints(countryField, 0, 3);
-                        GridPane.setConstraints(cityField, 0, 4);
-                        GridPane.setConstraints(logOutBtn, 0, 8);
-                        GridPane.setConstraints(searchBtn, 0, 8);
+                        //Button '12 hours forecast'
+                        Button hourly12Btn = new Button("12 hours hourly forecast");
+                        hourly12Btn.setFont(Font.font(Font.getDefault().getName(), FontWeight.NORMAL, 17));
+                        //Button '5 days forecast'
+                        Button daily5Btn = new Button("5 days daily forecast");
+                        daily5Btn.setFont(Font.font(Font.getDefault().getName(), FontWeight.NORMAL, 17));
+
+                        //Adding the buttons to the vBox
+                        vBox.getChildren().addAll(hourly12Btn, daily5Btn);
 
                         logOutBtn.setOnAction(new EventHandler<ActionEvent>() {
                             @Override
@@ -434,150 +422,421 @@ public class Interface extends Application {
                             }
                         });
 
-                        searchBtn.setOnAction(new EventHandler<ActionEvent>() {
+                        daily5Btn.setOnAction(new EventHandler<ActionEvent>() {
                             @Override
                             public void handle(ActionEvent event) {
-
-                                String countryValue = countryField.getText();
-                                String cityValue = cityField.getText();
-
-                                // new Scene
-                                Scene forecastScene = new Scene(new Group(), 1100, 450);
-                                stage.setScene(forecastScene);
-                                stage.centerOnScreen();
-
-                                // root pane
+                                //root
                                 StackPane rootPane = new StackPane();
                                 rootPane.setPadding(new Insets(10));
-                                forecastScene.setRoot(rootPane);
+
+                                // new Scene
+                                Scene daily5Scene = new Scene(rootPane, 310, 350);
+                                daily5Scene.setRoot(rootPane);
+                                stage.setScene(daily5Scene);
 
                                 // BorderPane to be able to set a Text centered at the top of the window
-                                BorderPane borderPane2 = new BorderPane();
+                                BorderPane bPane = new BorderPane();
 
-                                // City name
-                                Text cityName = new Text(cityValue+", "+countryValue);
-                                cityName.setFont(Font.font("Verdana", FontWeight.SEMI_BOLD, 26));
-                                borderPane2.setTop(cityName);
-                                BorderPane.setAlignment(cityName, Pos.CENTER);
+                                // 'Hello <name>'
+                                Text name = new Text("Hello " + db.getName(email.getText()) + "!");
+                                name.setFont(Font.font("Verdana", FontWeight.SEMI_BOLD, 25));
+                                bPane.setTop(name);
+                                BorderPane.setAlignment(name, Pos.CENTER);
 
-                                // GridPane for the VBoxes
-                                GridPane gridPane = new GridPane();
-                                gridPane.setPadding(new Insets(10));
-                                gridPane.setVgap(20);
-                                //gridPane.setHgap(20);
+                                // Country Name
+                                TextField countryField = new TextField();
+                                countryField.setPromptText("Country Name");
+                                countryField.setPrefColumnCount(20);
+                                countryField.setPrefHeight(20);
 
-                                ApiCalls api = new ApiCalls();
-                                String json = api.getDaily5DaysForecast(api.getKey(cityValue, countryValue));
+                                // City Name
+                                TextField cityField = new TextField();
+                                cityField.setPromptText("City Name");
+                                cityField.setPrefHeight(20);
+                                cityField.setPrefColumnCount(20);
 
-                                ObjectMapper objMapper = new ObjectMapper();
-                                try{
-                                    JsonNode rootNode = objMapper.readTree(json);
-                                    rootNode = rootNode.get("DailyForecasts");
-
-                                    json = rootNode.toString();
-                                    json = json.substring(1, json.length()-1); //DailyForecasts node is surrounded by []
-
-                                    // split the json node into multiple nodes (easier to read info of the various days)
-                                    String[] date = json.split("[{]\"Date\""); // split when ' {"Date" '
-                                    // the previous .split() returns an empty string in date[0] so to get rid of that
-                                    date = Arrays.copyOfRange(date, 1, date.length);
-
-                                    int n_nodes = date.length;
-
-                                    for(int i=0; i<n_nodes; i++)
-                                    {
-                                        date[i] = "{\"Date\"" + date[i]; // re-add the ' {"dt" ' that .split() removes so as to use ObjectMapper
-                                        if(i != n_nodes-1)                                      // remove the ',' at the end so as to use ObjectMapper
-                                            date[i] = date[i].substring(0, date[i].length()-1); // last element does not have a ',' at the end
-                                    }
-
-                                    //Adding the dates over each column of the matrix
-                                    for(int i=0; i<n_nodes; i++)
-                                    {
-                                        Label day = new Label();
-
-                                        JsonNode tempNode = objMapper.readTree(date[i]);
-                                        tempNode = tempNode.get("Date");
-
-                                        //positions 1 to 11 of the Date value holds the date, the rest of it is other info
-                                        day.setText(tempNode.toString().substring(1,11));
-
-                                        day.setFont(Font.font("Verdana", FontWeight.BLACK, 14));
-                                        GridPane.setConstraints(day, i+1, 3);
-                                        GridPane.setHalignment(day, HPos.CENTER);
-                                        gridPane.getChildren().add(day);
-                                    }
-
-                                    //Adding the descriptions for each row of the matrix
-                                    for(int i=0; i<4; i++)
-                                    {
-                                        Label text = new Label();
-                                        switch(i)
-                                        {
-                                            case(0): text.setText("Max temp:"); break;
-                                            case(1): text.setText("Min temp:"); break;
-                                            case(2): text.setText("Daytime:"); break;
-                                            case(3): text.setText("Nighttime:"); break;
-                                            default: break;
-                                        }
-                                        text.setFont(Font.font("Verdana", FontWeight.BLACK, 14));
-                                        GridPane.setConstraints(text, 0, i+4);
-                                        GridPane.setHalignment(text, HPos.RIGHT);
-                                        gridPane.getChildren().add(text);
-                                    }
-
-                                    //Adding the forecast info to the matrix
-                                    for(int col=0; col<n_nodes; col++)
-                                    {
-                                        //Creating a JsonNode for the current day so as to use the 'switch' below
-                                        JsonNode tempNode = objMapper.readTree(date[col]);
-                                        for(int row=0; row<4; row++)
-                                        {
-                                            Label text = new Label();
-                                            switch (row)
-                                            {
-                                                case(0): text.setText(tempNode.get("Temperature").get("Maximum").get("Value")+" ºC"); break;
-                                                case(1): text.setText(tempNode.get("Temperature").get("Minimum").get("Value")+" ºC"); break;
-                                                case(2): String str = tempNode.get("Day").get("ShortPhrase").toString();
-                                                         str = str.substring(1, str.length()-1); // remove the ' " ' at the start and end of string
-                                                         text.setText(str);
-                                                         break;
-                                                case(3): str = tempNode.get("Night").get("ShortPhrase").toString();
-                                                         str = str.substring(1, str.length()-1); // remove the ' " ' at the start and end of string
-                                                         text.setText(str); break;
-                                                default: break;
-                                            }
-                                            GridPane.setConstraints(text, col+1, row+4);
-                                            GridPane.setHalignment(text, HPos.CENTER);
-                                            gridPane.getChildren().add(text);
-                                        }
-                                    }
-                                    ColumnConstraints firstCol = new ColumnConstraints(90);
-                                    ColumnConstraints otherCols = new ColumnConstraints();
-
-                                    // divide the space equally by the columns with the forecast info (from the 2nd onwards)
-                                    otherCols.setPrefWidth( (stage.getWidth()-firstCol.getPrefWidth())/5.0 );
-
-                                    gridPane.getColumnConstraints().addAll(firstCol, otherCols, otherCols, otherCols, otherCols, otherCols);
-
-                                } catch (IOException e) {
-                                    e.printStackTrace();
-                                }
+                                // Button 'Search'
+                                Button searchBtn = new Button("Search");
+                                GridPane.setHalignment(searchBtn, HPos.RIGHT);
 
                                 // Button 'back'
                                 Button backBtn = new Button("Back");
-                                GridPane.setConstraints(backBtn, 0, 12);
-                                gridPane.getChildren().add(backBtn);
+                                GridPane.setHalignment(backBtn, HPos.LEFT);
 
-                                rootPane.getChildren().addAll( borderPane2, new VBox(gridPane) );
+                                //GridPane
+                                GridPane gridPane = new GridPane();
+                                gridPane.setVgap(20);
+                                gridPane.setHgap(20);
+
+                                rootPane.getChildren().addAll(bPane, gridPane);
+
+                                gridPane.getChildren().addAll(countryField, cityField, backBtn, searchBtn);
+                                GridPane.setConstraints(countryField, 0, 3);
+                                GridPane.setConstraints(cityField, 0, 4);
+                                GridPane.setConstraints(backBtn, 0, 8);
+                                GridPane.setConstraints(searchBtn, 0, 8);
 
                                 backBtn.setOnAction(new EventHandler<ActionEvent>() {
                                     @Override
                                     public void handle(ActionEvent event) {
                                         stage.setScene(loggedInScene);
+                                        return;
                                     }
                                 });
 
+                                searchBtn.setOnAction(new EventHandler<ActionEvent>() {
+                                    @Override
+                                    public void handle(ActionEvent event) {
+
+                                        String countryValue = countryField.getText();
+                                        String cityValue = cityField.getText();
+
+                                        // new Scene
+                                        Scene forecast5Scene = new Scene(new Group(), 1300, 450);
+                                        stage.setScene(forecast5Scene);
+                                        stage.centerOnScreen();
+
+                                        // root pane
+                                        StackPane rootPane = new StackPane();
+                                        rootPane.setPadding(new Insets(10));
+                                        forecast5Scene.setRoot(rootPane);
+
+                                        // BorderPane to be able to set a Text centered at the top of the window
+                                        BorderPane borderPane2 = new BorderPane();
+
+                                        // City name
+                                        Text cityName = new Text(cityValue + ", " + countryValue);
+                                        cityName.setFont(Font.font("Verdana", FontWeight.BOLD, 40));
+                                        borderPane2.setTop(cityName);
+                                        BorderPane.setAlignment(cityName, Pos.CENTER);
+
+                                        // GridPane
+                                        GridPane gridPane = new GridPane();
+                                        gridPane.setPadding(new Insets(10));
+                                        gridPane.setVgap(20);
+                                        //gridPane.setHgap(20);
+
+                                        ApiCalls api = new ApiCalls();
+                                        String json = api.getDaily5DaysForecast(api.getKey(cityValue, countryValue));
+
+                                        ObjectMapper objMapper = new ObjectMapper();
+                                        try {
+                                            JsonNode rootNode = objMapper.readTree(json);
+                                            rootNode = rootNode.get("DailyForecasts");
+
+                                            json = rootNode.toString();
+                                            json = json.substring(1, json.length() - 1); //DailyForecasts node is surrounded by []
+
+                                            // split the json node into multiple nodes (easier to read info of the various days)
+                                            String[] date = json.split("[{]\"Date\""); // split when ' {"Date" '
+                                            // the previous .split() returns an empty string in date[0] so to get rid of that
+                                            date = Arrays.copyOfRange(date, 1, date.length);
+
+                                            int n_nodes = date.length;
+
+                                            //Formatting the nodes correctly to use ObjectMapper
+                                            for (int i = 0; i < n_nodes; i++) {
+                                                date[i] = "{\"Date\"" + date[i]; // re-add the ' {"Date" ' that .split() removes so as to use ObjectMapper
+                                                if (i != n_nodes - 1)                                      // remove the ',' at the end so as to use ObjectMapper
+                                                    date[i] = date[i].substring(0, date[i].length() - 1); // last element does not have a ',' at the end
+                                            }
+
+                                            //Adding the dates over each column of the matrix
+                                            for (int i = 0; i < n_nodes; i++) {
+                                                Label day = new Label();
+
+                                                JsonNode tempNode = objMapper.readTree(date[i]);
+                                                tempNode = tempNode.get("Date");
+
+                                                //positions 1 to 11 of the Date value holds the date, the rest of it is other info
+                                                day.setText(tempNode.toString().substring(1, 11));
+
+                                                day.setFont(Font.font("Verdana", FontWeight.BLACK, 14));
+                                                GridPane.setConstraints(day, i + 1, 5);
+                                                GridPane.setHalignment(day, HPos.CENTER);
+                                                gridPane.getChildren().add(day);
+                                            }
+
+                                            //Adding the descriptions for each row of the matrix
+                                            for (int i = 0; i < 4; i++) {
+                                                Label text = new Label();
+                                                switch (i) {
+                                                    case (0): text.setText("Max temp:"); break;
+                                                    case (1): text.setText("Min temp:"); break;
+                                                    case (2): text.setText("Daytime:"); break;
+                                                    case (3): text.setText("Nighttime:"); break;
+                                                    default: break;
+                                                }
+                                                text.setFont(Font.font("Verdana", FontWeight.BLACK, 14));
+                                                GridPane.setConstraints(text, 0, i + 6);
+                                                GridPane.setHalignment(text, HPos.RIGHT);
+                                                gridPane.getChildren().add(text);
+                                            }
+
+                                            //Adding the forecast info to the matrix
+                                            for (int col = 0; col < n_nodes; col++) {
+                                                //Creating a JsonNode for the current day so as to use the 'switch' below
+                                                JsonNode tempNode = objMapper.readTree(date[col]);
+                                                for (int row = 0; row < 4; row++) {
+                                                    Label text = new Label();
+                                                    switch (row) {
+                                                        case (0): text.setText(tempNode.get("Temperature").get("Maximum").get("Value") + " ºC"); break;
+                                                        case (1): text.setText(tempNode.get("Temperature").get("Minimum").get("Value") + " ºC"); break;
+                                                        case (2): String str = tempNode.get("Day").get("ShortPhrase").toString();
+                                                                  str = str.substring(1, str.length() - 1); // remove the ' " ' at the start and end of string
+                                                                  text.setText(str);
+                                                                  break;
+                                                        case (3): str = tempNode.get("Night").get("ShortPhrase").toString();
+                                                                  str = str.substring(1, str.length() - 1); // remove the ' " ' at the start and end of string
+                                                                  text.setText(str);
+                                                                  break;
+                                                        default: break;
+                                                    }
+                                                    GridPane.setConstraints(text, col + 1, row + 6);
+                                                    GridPane.setHalignment(text, HPos.CENTER);
+                                                    gridPane.getChildren().add(text);
+                                                }
+                                            }
+                                            //Button 'back'
+                                            Button backBtn = new Button("Back");
+                                            borderPane2.setBottom(backBtn);
+
+                                            //Creating 2 ColumnConstraints, one fixed at 90px and one which is calculated ahead
+                                            ColumnConstraints firstCol = new ColumnConstraints(90);
+                                            ColumnConstraints otherCols = new ColumnConstraints();
+
+                                            // divide the space equally by the columns with the forecast info (from the 2nd onwards)
+                                            otherCols.setPrefWidth((stage.getWidth() - firstCol.getPrefWidth()) / 5.0);
+
+                                            gridPane.getColumnConstraints().addAll(firstCol, otherCols, otherCols, otherCols, otherCols, otherCols);
+                                            rootPane.getChildren().addAll(borderPane2, gridPane);
+
+                                            backBtn.setOnAction(new EventHandler<ActionEvent>() {
+                                                @Override
+                                                public void handle(ActionEvent event) {
+                                                    stage.setScene(daily5Scene);
+                                                    return;
+                                                }
+                                            });
+                                        } catch (IOException e) {
+                                            e.printStackTrace();
+                                        }
+                                    }
+                                });
+                            }
+                        });
+
+                        hourly12Btn.setOnAction(new EventHandler<ActionEvent>() {
+                            @Override
+                            public void handle(ActionEvent event) {
+                                //root
+                                StackPane rootPane = new StackPane();
+                                rootPane.setPadding(new Insets(10));
+
+                                // new Scene
+                                Scene hourly12Scene = new Scene(rootPane, 310, 350);
+                                hourly12Scene.setRoot(rootPane);
+                                stage.setScene(hourly12Scene);
+
+                                // BorderPane to be able to set a Text centered at the top of the window
+                                BorderPane bPane = new BorderPane();
+
+                                // 'Hello <name>'
+                                Text name = new Text("Hello " + db.getName(email.getText()) + "!");
+                                name.setFont(Font.font("Verdana", FontWeight.SEMI_BOLD, 25));
+                                bPane.setTop(name);
+                                BorderPane.setAlignment(name, Pos.CENTER);
+
+                                // Country Name
+                                TextField countryField = new TextField();
+                                countryField.setPromptText("Country Name");
+                                countryField.setPrefColumnCount(20);
+                                countryField.setPrefHeight(20);
+
+                                // City Name
+                                TextField cityField = new TextField();
+                                cityField.setPromptText("City Name");
+                                cityField.setPrefHeight(20);
+                                cityField.setPrefColumnCount(20);
+
+                                // Button 'Search'
+                                Button searchBtn = new Button("Search");
+                                GridPane.setHalignment(searchBtn, HPos.RIGHT);
+
+                                // Button 'back'
+                                Button backBtn = new Button("Back");
+                                GridPane.setHalignment(backBtn, HPos.LEFT);
+
+                                //GridPane
+                                GridPane gridPane = new GridPane();
+                                gridPane.setVgap(20);
+                                gridPane.setHgap(20);
+
+                                rootPane.getChildren().addAll(bPane, gridPane);
+
+                                gridPane.getChildren().addAll(countryField, cityField, backBtn, searchBtn);
+                                GridPane.setConstraints(countryField, 0, 3);
+                                GridPane.setConstraints(cityField, 0, 4);
+                                GridPane.setConstraints(backBtn, 0, 8);
+                                GridPane.setConstraints(searchBtn, 0, 8);
+
+                                backBtn.setOnAction(new EventHandler<ActionEvent>() {
+                                    @Override
+                                    public void handle(ActionEvent event) {
+                                        stage.setScene(loggedInScene);
+                                        return;
+                                    }
+                                });
+
+                                searchBtn.setOnAction(new EventHandler<ActionEvent>() {
+                                    @Override
+                                    public void handle(ActionEvent event) {
+                                        String countryValue = countryField.getText();
+                                        String cityValue = cityField.getText();
+
+                                        // new Scene
+                                        Scene forecast12Scene = new Scene(new Group(), 1300, 450);
+                                        stage.setScene(forecast12Scene);
+                                        stage.centerOnScreen();
+
+                                        // root pane
+                                        StackPane rootPane = new StackPane();
+                                        rootPane.setPadding(new Insets(10));
+                                        forecast12Scene.setRoot(rootPane);
+
+                                        // BorderPane to be able to set a Text centered at the top of the window
+                                        BorderPane borderPane2 = new BorderPane();
+
+                                        // City name
+                                        Text cityName = new Text(cityValue + ", " + countryValue);
+                                        cityName.setFont(Font.font("Verdana", FontWeight.BOLD, 40));
+                                        borderPane2.setTop(cityName);
+                                        BorderPane.setAlignment(cityName, Pos.CENTER);
+
+                                        // GridPane
+                                        GridPane gridPane = new GridPane();
+                                        gridPane.setPadding(new Insets(10));
+                                        gridPane.setVgap(20);
+                                        //gridPane.setHgap(20);
+
+                                        ApiCalls api = new ApiCalls();
+                                        String json = api.getHourly12HoursForecast(api.getKey(cityValue, countryValue));
+
+                                        ObjectMapper objMapper = new ObjectMapper();
+                                        try{
+                                            json = json.substring(1, json.length()-1); //Nodes are surrounded by []
+
+                                            //split the json node into multiple nodes (easier to read info of the various hours)
+                                            String[] hour = json.split("[{]\"DateTime\""); // split when ' {"DateTime" '
+                                            //the previous .split() returns an empty string in hour[0] so to get rid of that
+                                            hour = Arrays.copyOfRange(hour, 1, hour.length);
+
+                                            int n_nodes = hour.length;
+
+                                            //Formatting the nodes correctly to use ObjectMapper
+                                            for (int i = 0; i < n_nodes; i++) {
+                                                hour[i] = "{\"DateTime\"" + hour[i]; // re-add the ' {"DateTime" ' that .split() removes so as to use ObjectMapper
+                                                if (i != n_nodes - 1)                                      // remove the ',' at the end so as to use ObjectMapper
+                                                    hour[i] = hour[i].substring(0, hour[i].length() - 1); // last element does not have a ',' at the end
+                                            }
+
+                                            /**
+                                             * Adding the date of the first and last times displayed and
+                                             * adding the time over each column of the matrix
+                                            */
+                                            for (int i=0; i<n_nodes; i++)
+                                            {
+                                                Label hr = new Label();
+
+                                                JsonNode tempNode = objMapper.readTree(hour[i]);
+                                                tempNode = tempNode.get("DateTime");
+
+                                                //positions 12 to 17 of DateTime holds the node's hour
+                                                hr.setText(tempNode.toString().substring(12, 17));
+
+                                                hr.setFont(Font.font("Verdana", FontWeight.BLACK, 14));
+                                                GridPane.setConstraints(hr, i+1, 5);
+                                                GridPane.setHalignment(hr, HPos.CENTER);
+                                                gridPane.getChildren().add(hr);
+
+                                                if(i==0 || i==n_nodes-1)
+                                                {
+                                                    Label day = new Label();
+
+                                                    //positions 1 to 11 of DateTime hold node's date
+                                                    day.setText(tempNode.toString().substring(1, 11));
+                                                    day.setFont(Font.font("Verdana", FontWeight.BLACK, 14));
+                                                    GridPane.setConstraints(day, i+1, 4);
+                                                    GridPane.setHalignment(day, HPos.CENTER);
+                                                    gridPane.getChildren().add(day);
+                                                }
+                                            }
+
+                                            //Adding the descriptions for each row of the matrix
+                                            for (int i = 0; i < 5; i++) {
+                                                Label text = new Label();
+                                                switch (i)
+                                                {
+                                                    case (0): text.setText("Temperature:"); break;
+                                                    case (1): text.setText("Sensation:"); break;
+                                                    case (2): text.setText("Precipitation"); break;
+                                                    case (3): text.setText("Humidity:"); break;
+                                                    case (4): text.setText("Wind speed:"); break;
+                                                    default: break;
+                                                }
+                                                text.setFont(Font.font("Verdana", FontWeight.BLACK, 14));
+                                                GridPane.setConstraints(text, 0, i + 6);
+                                                GridPane.setHalignment(text, HPos.RIGHT);
+                                                gridPane.getChildren().add(text);
+                                            }
+
+                                            //Adding the forecast info to the matrix
+                                            for (int col=0; col<n_nodes; col++)
+                                            {
+                                                //Creating a JsonNode for the current hour so as to use the 'switch below'
+                                                JsonNode tempNode = objMapper.readTree(hour[col]);
+                                                for (int row=0; row<5; row++)
+                                                {
+                                                    Label text = new Label();
+                                                    switch(row){
+                                                        case(0): text.setText(tempNode.get("Temperature").get("Value") + " ºC"); break;
+                                                        case(1): text.setText(tempNode.get("RealFeelTemperature").get("Value") + " ºC"); break;
+                                                        case(2): text.setText(tempNode.get("Rain").get("Value") + " mm"); break;
+                                                        case(3): text.setText(tempNode.get("RelativeHumidity") + "%"); break;
+                                                        case(4): text.setText(tempNode.get("Wind").get("Speed").get("Value") + " km/h"); break;
+                                                        default: break;
+                                                    }
+                                                    GridPane.setConstraints(text, col + 1, row + 6);
+                                                    GridPane.setHalignment(text, HPos.CENTER);
+                                                    gridPane.getChildren().add(text);
+                                                }
+                                            }
+                                            //Button 'back'
+                                            Button backBtn = new Button("Back");
+                                            borderPane2.setBottom(backBtn);
+
+                                            //Creating 2 ColumnConstraints, one fixed at 90px and one which is calculated ahead
+                                            ColumnConstraints firstCol = new ColumnConstraints(110);
+                                            ColumnConstraints otherCols = new ColumnConstraints();
+
+                                            // divide the space equally by the columns with the forecast info (from the 2nd onwards)
+                                            otherCols.setPrefWidth((stage.getWidth() - firstCol.getPrefWidth()) / 12.0);
+
+                                            gridPane.getColumnConstraints().addAll(firstCol, otherCols, otherCols, otherCols, otherCols, otherCols, otherCols, otherCols, otherCols, otherCols, otherCols, otherCols, otherCols );
+                                            rootPane.getChildren().addAll(borderPane2, gridPane);
+
+                                            backBtn.setOnAction(new EventHandler<ActionEvent>() {
+                                                @Override
+                                                public void handle(ActionEvent event) {
+                                                    stage.setScene(hourly12Scene);
+                                                    return;
+                                                }
+                                            });
+                                        } catch (IOException e) {
+                                            e.printStackTrace();
+                                        }
+                                    }
+                                });
                             }
                         });
                     }
