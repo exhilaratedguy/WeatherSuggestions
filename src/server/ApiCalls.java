@@ -14,7 +14,7 @@ import javax.swing.*;
 public class ApiCalls {
 
     private final String USER_AGENT = "Mozilla/5.0";
-    private final String API_KEY = "GhGJ8BnsA9PlCsWak4ksS51GZNLrV2H2";
+    private final String API_KEY = "KG7i0YYnfRAAgWcIDYLqDLr5gAFpjJsw";
 
     public static void main(String[] args) throws Exception {
 
@@ -61,7 +61,8 @@ public class ApiCalls {
     }
 
     public String getKey(String city, String country) {
-        String str = null;
+        String str = "";
+
         try {
             String urlString = "http://dataservice.accuweather.com/locations/v1/cities/search?apikey=" + API_KEY;
             urlString += "&q=" + city + "%2C%20" + country;
@@ -81,13 +82,13 @@ public class ApiCalls {
             String output;
             while ( (output = br.readLine()) != null && !output.equals("[]") ){
                 str += output;
-                System.out.println(str);
+                //System.out.println(str);
             }
             conn.disconnect();
 
             if( !str.isEmpty() ) {
                 str = str.substring(21, 27);
-                System.out.println(str);
+                //System.out.println(str);
             }
         } catch (MalformedURLException e) {
             e.printStackTrace();
@@ -99,7 +100,7 @@ public class ApiCalls {
     }
 
     public String getCurrentConditions(String key) {
-        String json = null;
+        String json = "";
 
         try {
             String urlString = "http://dataservice.accuweather.com/currentconditions/v1/" + key + "?apikey=";
@@ -120,7 +121,7 @@ public class ApiCalls {
             String output;
             while ( (output = br.readLine()) != null  ){
                 json += output;
-                System.out.println(json);
+                //System.out.println(json);
             }
 
             conn.disconnect();
@@ -135,7 +136,7 @@ public class ApiCalls {
     }
 
     public String getDaily5DaysForecast(String key){
-        String json = null;
+        String json = "";
 
         try {
             String urlString = "http://dataservice.accuweather.com/forecasts/v1/daily/5day/" + key + "?apikey=";
@@ -159,7 +160,7 @@ public class ApiCalls {
             String output;
             while ( (output = br.readLine()) != null ){
                 json += output;
-                System.out.println(json);
+                //System.out.println(json);
             }
 
             conn.disconnect();
