@@ -4,7 +4,6 @@
     <list default="true" id="3a301878-06b9-49b5-bcbe-754de47c728e" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/output/Interface.java" afterPath="$PROJECT_DIR$/src/output/Interface.java" />
-      <change beforePath="$PROJECT_DIR$/src/server/ApiCalls.java" afterPath="$PROJECT_DIR$/src/server/ApiCalls.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -64,8 +63,8 @@
       <file leaf-file-name="Interface.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/output/Interface.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="457">
-              <caret line="513" column="79" lean-forward="false" selection-start-line="513" selection-start-column="79" selection-end-line="513" selection-end-column="79" />
+            <state relative-caret-position="468">
+              <caret line="434" column="78" lean-forward="false" selection-start-line="434" selection-start-column="78" selection-end-line="434" selection-end-column="78" />
               <folding>
                 <element signature="e#1239#1240#0" expanded="true" />
                 <element signature="e#1267#1268#0" expanded="true" />
@@ -87,9 +86,9 @@
                 <element signature="e#13990#13991#0" expanded="true" />
                 <element signature="class#17667:17996" expanded="false" />
                 <element signature="method#handle#0;class#17667:17996" expanded="false" />
-                <element signature="class#29865:30159" expanded="false" />
-                <element signature="e#30015#30016#0" expanded="true" />
-                <element signature="e#30124#30125#0" expanded="true" />
+                <element signature="class#28901:29195" expanded="false" />
+                <element signature="e#29051#29052#0" expanded="true" />
+                <element signature="e#29160#29161#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -111,10 +110,9 @@
       <file leaf-file-name="MysqlConnect.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/database/MysqlConnect.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+            <state relative-caret-position="21">
+              <caret line="1" column="26" lean-forward="false" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
               <folding>
-                <element signature="imports" expanded="true" />
                 <element signature="method#MysqlConnect#0;class#MysqlConnect#0" expanded="false" />
                 <element signature="method#getAll#0;class#MysqlConnect#0" expanded="false" />
                 <element signature="method#connect#0;class#MysqlConnect#0" expanded="false" />
@@ -174,6 +172,7 @@
         <option value="$PROJECT_DIR$/src/database/MysqlConnect.java" />
         <option value="$PROJECT_DIR$/NOTES.md" />
         <option value="$PROJECT_DIR$/src/server/ApiCalls.java" />
+        <option value="$PROJECT_DIR$/ApiKeys.txt" />
         <option value="$PROJECT_DIR$/src/output/Interface.java" />
       </list>
     </option>
@@ -532,7 +531,21 @@
       <option name="project" value="LOCAL" />
       <updated>1515019223611</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Changing API to AccuWeather - guest search changed; halfway through changing logged in">
+      <created>1515032120570</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1515032120571</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Changing API to AccuWeather - guest search changed; halfway through changing logged in">
+      <created>1515032305279</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1515032305279</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -585,7 +598,8 @@
     <MESSAGE value="teste2" />
     <MESSAGE value="Changing API to AccuWeather" />
     <MESSAGE value="Changing API to AccuWeather - guest search changed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changing API to AccuWeather - guest search changed" />
+    <MESSAGE value="Changing API to AccuWeather - guest search changed; halfway through changing logged in" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changing API to AccuWeather - guest search changed; halfway through changing logged in" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -594,38 +608,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/output/Interface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#1239#1240#0" expanded="true" />
-            <element signature="e#1267#1268#0" expanded="true" />
-            <element signature="class#8478:8728" expanded="false" />
-            <element signature="e#8612#8613#0" expanded="true" />
-            <element signature="e#8701#8702#0" expanded="true" />
-            <element signature="class#8815:9026" expanded="false" />
-            <element signature="e#8933#8934#0" expanded="true" />
-            <element signature="e#9007#9008#0" expanded="true" />
-            <element signature="class#9114:12212" expanded="false" />
-            <element signature="method#handle#0;class#9114:12212" expanded="false" />
-            <element signature="class#10844:11055" expanded="false" />
-            <element signature="e#10962#10963#0" expanded="true" />
-            <element signature="e#11036#11037#0" expanded="true" />
-            <element signature="class#11099:12186" expanded="false" />
-            <element signature="method#handle#0;class#11099:12186" expanded="false" />
-            <element signature="class#13798:14009" expanded="false" />
-            <element signature="e#13916#13917#0" expanded="true" />
-            <element signature="e#13990#13991#0" expanded="true" />
-            <element signature="class#17667:17996" expanded="false" />
-            <element signature="method#handle#0;class#17667:17996" expanded="false" />
-            <element signature="class#29865:30159" expanded="false" />
-            <element signature="e#30015#30016#0" expanded="true" />
-            <element signature="e#30124#30125#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/server/ApiCalls.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
@@ -661,7 +643,6 @@
         <state relative-caret-position="357">
           <caret line="20" column="52" lean-forward="false" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#MysqlConnect#0;class#MysqlConnect#0" expanded="false" />
             <element signature="method#getAll#0;class#MysqlConnect#0" expanded="false" />
             <element signature="method#connect#0;class#MysqlConnect#0" expanded="false" />
@@ -706,9 +687,9 @@
             <element signature="e#13990#13991#0" expanded="true" />
             <element signature="class#17667:17996" expanded="false" />
             <element signature="method#handle#0;class#17667:17996" expanded="false" />
-            <element signature="class#29865:30159" expanded="false" />
-            <element signature="e#30015#30016#0" expanded="true" />
-            <element signature="e#30124#30125#0" expanded="true" />
+            <element signature="class#28901:29195" expanded="false" />
+            <element signature="e#29051#29052#0" expanded="true" />
+            <element signature="e#29160#29161#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -735,7 +716,6 @@
         <state relative-caret-position="420">
           <caret line="20" column="52" lean-forward="false" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#MysqlConnect#0;class#MysqlConnect#0" expanded="false" />
             <element signature="method#getAll#0;class#MysqlConnect#0" expanded="false" />
             <element signature="method#connect#0;class#MysqlConnect#0" expanded="false" />
@@ -802,7 +782,6 @@
         <state relative-caret-position="357">
           <caret line="20" column="52" lean-forward="true" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#MysqlConnect#0;class#MysqlConnect#0" expanded="false" />
             <element signature="method#getAll#0;class#MysqlConnect#0" expanded="false" />
             <element signature="method#connect#0;class#MysqlConnect#0" expanded="false" />
@@ -853,9 +832,9 @@
             <element signature="e#13990#13991#0" expanded="true" />
             <element signature="class#17667:17996" expanded="false" />
             <element signature="method#handle#0;class#17667:17996" expanded="false" />
-            <element signature="class#29865:30159" expanded="false" />
-            <element signature="e#30015#30016#0" expanded="true" />
-            <element signature="e#30124#30125#0" expanded="true" />
+            <element signature="class#28901:29195" expanded="false" />
+            <element signature="e#29051#29052#0" expanded="true" />
+            <element signature="e#29160#29161#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -915,9 +894,9 @@
             <element signature="e#13990#13991#0" expanded="true" />
             <element signature="class#17667:17996" expanded="false" />
             <element signature="method#handle#0;class#17667:17996" expanded="false" />
-            <element signature="class#29865:30159" expanded="false" />
-            <element signature="e#30015#30016#0" expanded="true" />
-            <element signature="e#30124#30125#0" expanded="true" />
+            <element signature="class#28901:29195" expanded="false" />
+            <element signature="e#29051#29052#0" expanded="true" />
+            <element signature="e#29160#29161#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -927,7 +906,6 @@
         <state relative-caret-position="378">
           <caret line="18" column="31" lean-forward="false" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#MysqlConnect#0;class#MysqlConnect#0" expanded="false" />
             <element signature="method#getAll#0;class#MysqlConnect#0" expanded="false" />
             <element signature="method#connect#0;class#MysqlConnect#0" expanded="false" />
@@ -1008,9 +986,9 @@
             <element signature="e#13990#13991#0" expanded="true" />
             <element signature="class#17667:17996" expanded="false" />
             <element signature="method#handle#0;class#17667:17996" expanded="false" />
-            <element signature="class#29865:30159" expanded="false" />
-            <element signature="e#30015#30016#0" expanded="true" />
-            <element signature="e#30124#30125#0" expanded="true" />
+            <element signature="class#28901:29195" expanded="false" />
+            <element signature="e#29051#29052#0" expanded="true" />
+            <element signature="e#29160#29161#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1020,7 +998,6 @@
         <state relative-caret-position="378">
           <caret line="18" column="31" lean-forward="false" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#MysqlConnect#0;class#MysqlConnect#0" expanded="false" />
             <element signature="method#getAll#0;class#MysqlConnect#0" expanded="false" />
             <element signature="method#connect#0;class#MysqlConnect#0" expanded="false" />
@@ -1051,7 +1028,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#MysqlConnect#0;class#MysqlConnect#0" expanded="false" />
             <element signature="method#getAll#0;class#MysqlConnect#0" expanded="false" />
             <element signature="method#connect#0;class#MysqlConnect#0" expanded="false" />
@@ -1095,9 +1071,9 @@
             <element signature="e#13990#13991#0" expanded="true" />
             <element signature="class#17667:17996" expanded="false" />
             <element signature="method#handle#0;class#17667:17996" expanded="false" />
-            <element signature="class#29865:30159" expanded="false" />
-            <element signature="e#30015#30016#0" expanded="true" />
-            <element signature="e#30124#30125#0" expanded="true" />
+            <element signature="class#28901:29195" expanded="false" />
+            <element signature="e#29051#29052#0" expanded="true" />
+            <element signature="e#29160#29161#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1157,9 +1133,9 @@
             <element signature="e#13990#13991#0" expanded="true" />
             <element signature="class#17667:17996" expanded="false" />
             <element signature="method#handle#0;class#17667:17996" expanded="false" />
-            <element signature="class#29865:30159" expanded="false" />
-            <element signature="e#30015#30016#0" expanded="true" />
-            <element signature="e#30124#30125#0" expanded="true" />
+            <element signature="class#28901:29195" expanded="false" />
+            <element signature="e#29051#29052#0" expanded="true" />
+            <element signature="e#29160#29161#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1189,9 +1165,9 @@
             <element signature="e#13990#13991#0" expanded="true" />
             <element signature="class#17667:17996" expanded="false" />
             <element signature="method#handle#0;class#17667:17996" expanded="false" />
-            <element signature="class#29865:30159" expanded="false" />
-            <element signature="e#30015#30016#0" expanded="true" />
-            <element signature="e#30124#30125#0" expanded="true" />
+            <element signature="class#28901:29195" expanded="false" />
+            <element signature="e#29051#29052#0" expanded="true" />
+            <element signature="e#29160#29161#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1249,22 +1225,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/MysqlConnect.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#MysqlConnect#0;class#MysqlConnect#0" expanded="false" />
-            <element signature="method#getAll#0;class#MysqlConnect#0" expanded="false" />
-            <element signature="method#connect#0;class#MysqlConnect#0" expanded="false" />
-            <element signature="method#insertUser#0;class#MysqlConnect#0" expanded="false" />
-            <element signature="method#isUser#0;class#MysqlConnect#0" expanded="false" />
-            <element signature="method#getName#0;class#MysqlConnect#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/output/Weather.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
@@ -1312,10 +1272,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ApiKeys.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="32" lean-forward="false" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/MysqlConnect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" column="26" lean-forward="false" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
+          <folding>
+            <element signature="method#MysqlConnect#0;class#MysqlConnect#0" expanded="false" />
+            <element signature="method#getAll#0;class#MysqlConnect#0" expanded="false" />
+            <element signature="method#connect#0;class#MysqlConnect#0" expanded="false" />
+            <element signature="method#insertUser#0;class#MysqlConnect#0" expanded="false" />
+            <element signature="method#isUser#0;class#MysqlConnect#0" expanded="false" />
+            <element signature="method#getName#0;class#MysqlConnect#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/output/Interface.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="513" column="79" lean-forward="false" selection-start-line="513" selection-start-column="79" selection-end-line="513" selection-end-column="79" />
+        <state relative-caret-position="468">
+          <caret line="434" column="78" lean-forward="false" selection-start-line="434" selection-start-column="78" selection-end-line="434" selection-end-column="78" />
           <folding>
             <element signature="e#1239#1240#0" expanded="true" />
             <element signature="e#1267#1268#0" expanded="true" />
@@ -1337,9 +1320,9 @@
             <element signature="e#13990#13991#0" expanded="true" />
             <element signature="class#17667:17996" expanded="false" />
             <element signature="method#handle#0;class#17667:17996" expanded="false" />
-            <element signature="class#29865:30159" expanded="false" />
-            <element signature="e#30015#30016#0" expanded="true" />
-            <element signature="e#30124#30125#0" expanded="true" />
+            <element signature="class#28901:29195" expanded="false" />
+            <element signature="e#29051#29052#0" expanded="true" />
+            <element signature="e#29160#29161#0" expanded="true" />
           </folding>
         </state>
       </provider>

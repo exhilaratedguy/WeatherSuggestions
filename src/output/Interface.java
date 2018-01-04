@@ -432,7 +432,7 @@ public class Interface extends Application {
                                 String cityValue = cityField.getText();
 
                                 // new Scene
-                                Scene forecastScene = new Scene(new Group(), 700, 450);
+                                Scene forecastScene = new Scene(new Group(), 900, 450);
                                 stage.setScene(forecastScene);
 
                                 // root pane
@@ -445,7 +445,7 @@ public class Interface extends Application {
 
                                 // City name
                                 Text cityName = new Text(cityValue+", "+countryValue);
-                                cityName.setFont(Font.font("Verdana", FontWeight.BOLD, 22));
+                                cityName.setFont(Font.font("Verdana", FontWeight.SEMI_BOLD, 26));
                                 borderPane2.setTop(cityName);
                                 BorderPane.setAlignment(cityName, Pos.CENTER);
 
@@ -515,7 +515,30 @@ public class Interface extends Application {
                                         gridPane.getChildren().add(text);
                                     }
 
-
+                                    for(int col=0; col<n_nodes; col++)
+                                    {
+                                        JsonNode tempNode = objMapper.readTree(date[col]);
+                                        for(int row=0; row<4; row++)
+                                        {
+                                            Text text = new Text();
+                                            switch (row)
+                                            {
+                                                case(0): text.setText(tempNode.get("Temperature").get("Maximum").get("Value")+" ºC"); break;
+                                                case(1): text.setText(tempNode.get("Temperature").get("Minimum").get("Value")+" ºC"); break;
+                                                case(2): String str = tempNode.get("Day").get("ShortPhrase").toString();
+                                                         str = str.substring(1, str.length()-1); // remove the ' " ' at the start and end of string
+                                                         text.setText(str);
+                                                         break;
+                                                case(3): str = tempNode.get("Night").get("ShortPhrase").toString();
+                                                         str = str.substring(1, str.length()-1); // remove the ' " ' at the start and end of string
+                                                         text.setText(str); break;
+                                                default: break;
+                                            }
+                                            GridPane.setConstraints(text, col+1, row+4);
+                                            GridPane.setHalignment(text, HPos.CENTER);
+                                            gridPane.getChildren().add(text);
+                                        }
+                                    }
 
 
 
@@ -529,10 +552,6 @@ public class Interface extends Application {
                                 }
 
                                 /*
-                                // split the json node into multiple nodes (for the multiple times)
-                                String[] info = json.split("[{]\"dt\""); // split when ' {"dt" '
-                                int n_nodes = info.length;
-                                System.out.println(n_nodes+"\n\n\n");
 
                                 Label[] times = new Label[n_nodes-1];
                                 //ObjectMapper objMapper = new ObjectMapper();
@@ -558,46 +577,6 @@ public class Interface extends Application {
                                     //System.out.println(i + "-\t" + info[i]);
                                 }
 
-                                // create matrix with possible hours
-                                for(int i=0; i<=7; i++)
-                                {
-                                    Text hour = new Text();
-                                    switch(i)
-                                    {
-                                        case 0: hour.setText("00h"); break;
-                                        case 1: hour.setText("03h"); break;
-                                        case 2: hour.setText("06h"); break;
-                                        case 3: hour.setText("09h"); break;
-                                        case 4: hour.setText("12h"); break;
-                                        case 5: hour.setText("15h"); break;
-                                        case 6: hour.setText("18h"); break;
-                                        case 7: hour.setText("21h"); break;
-                                        default: break;
-                                    }
-                                    hour.setFont(Font.font("Verdana",FontWeight.BLACK, 14));
-                                    GridPane.setConstraints(hour, i+1, 3);
-                                    GridPane.setHalignment(hour, HPos.CENTER);
-                                    gridPane.getChildren().add(hour);
-                                }
-
-                                for(int i=0; i<=5; i++)
-                                {
-                                    Text day = new Text();
-                                    switch(i)
-                                    {
-                                        case(0): day.setText(hours[0].substring(1,11)); break;
-                                        case(1): day.setText(hours[8].substring(1,11)); break;
-                                        case(2): day.setText(hours[16].substring(1,11)); break;
-                                        case(3): day.setText(hours[24].substring(1,11)); break;
-                                        case(4): day.setText(hours[32].substring(1,11)); break;
-                                        case(5): day.setText(hours[39].substring(1,11)); break;
-                                        default: break;
-                                    }
-                                    day.setFont(Font.font("Verdana", FontWeight.BLACK, 14));
-                                    GridPane.setConstraints(day, 0, i+4);
-                                    GridPane.setHalignment(day, HPos.CENTER);
-                                    gridPane.getChildren().add(day);
-                                }
 
                                 DecimalFormat fmt = new DecimalFormat("0.##");
                                 int row = 0;
