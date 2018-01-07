@@ -7,9 +7,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.DecimalFormat;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -35,6 +33,7 @@ import javax.swing.*;
 
 public class Interface extends Application {
     private final int N_DAYS_FORECAST = 5;
+    public ArrayList<Integer> humidity = new ArrayList<Integer>();
 
     public static void main(String[] args) {
         launch(args);
@@ -198,6 +197,8 @@ public class Interface extends Application {
                                 GridPane.setConstraints(text, 1, i+2);
                                 GridPane.setHalignment(text, HPos.LEFT);
                                 tempGrid.getChildren().add(text);
+
+
                             }
 
                         } catch (IOException e) {
@@ -775,6 +776,7 @@ public class Interface extends Application {
                                             //Adding the descriptions for each row of the matrix
                                             for (int i = 0; i < 5; i++) {
                                                 Label text = new Label();
+
                                                 switch (i)
                                                 {
                                                     case (0): text.setText("Temperature:"); break;
@@ -795,8 +797,10 @@ public class Interface extends Application {
                                             {
                                                 //Creating a JsonNode for the current hour so as to use the 'switch below'
                                                 JsonNode tempNode = objMapper.readTree(hour[col]);
+                                                humidity.add(tempNode.get("RelativeHumidity").intValue());
                                                 for (int row=0; row<5; row++)
                                                 {
+
                                                     Label text = new Label();
                                                     switch(row){
                                                         case(0): text.setText(tempNode.get("Temperature").get("Value") + " ºC"); break;
@@ -811,6 +815,10 @@ public class Interface extends Application {
                                                     gridPane.getChildren().add(text);
                                                 }
                                             }
+                                            System.out.println("Humidity" + humidity);
+                                            Collections.sort(humidity);
+                                            System.out.println("Humidity" + humidity);
+                                            System.out.println("Higher humidity indice:" + humidity.get(11));
                                             //Button 'back'
                                             Button backBtn = new Button("Back");
                                             borderPane2.setBottom(backBtn);

@@ -1,5 +1,5 @@
 package database;
-import org.postgresql.util.PSQLException;
+
 
 import java.sql.*;
 
@@ -9,7 +9,7 @@ public class MysqlConnect {
     private static final String URL = "jdbc:postgres://ahvaqbaw:WDPCED8wadZj7fKWwRxSAvBOy9JmveN2@dumbo.db.elephantsql.com:5432/ahvaqbaw";
     private static final String USER = "ahvaqbaw";
     private static final String PW = "WDPCED8wadZj7fKWwRxSAvBOy9JmveN2";
-    private static final String PATH = "C:/Users/Acer/Desktop/UPB/Programming Paradigms/test/Paradigms.db";
+    private static final String PATH = "C:/Users/Pedro/Documents/GitHub/WeatherSuggestions/Paradigms.db";
     private Connection c;
 
     /**

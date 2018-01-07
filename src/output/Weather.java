@@ -1,5 +1,10 @@
 package output;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.function.Supplier;
+
 public class Weather {
 
     private double temp;
@@ -54,5 +59,6 @@ public class Weather {
     public void setTemp_max(double temp_max) {
         this.temp_max = temp_max-273.15;
     }
+
 
 }
