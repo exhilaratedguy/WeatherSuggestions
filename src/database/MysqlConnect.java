@@ -6,11 +6,10 @@ import java.sql.*;
 
 public class MysqlConnect {
 
-    private static final String URL = "jdbc:postgres://ahvaqbaw:WDPCED8wadZj7fKWwRxSAvBOy9JmveN2@dumbo.db.elephantsql.com:5432/ahvaqbaw";
-    private static final String USER = "ahvaqbaw";
-    private static final String PW = "WDPCED8wadZj7fKWwRxSAvBOy9JmveN2";
-    private static final String PATH = "C:/Users/Pedro/Documents/GitHub/WeatherSuggestions/Paradigms.db";
-    private Connection c;
+    private static final String URL = "jdbc:postgresql://dumbo.db.elephantsql.com/";
+    private static final String USER = "eykorjca";
+    private static final String PW = "fT4L3J7pixWx1DooA3TA4Dl3bcGbYg7R";
+    private static final String PATH = "C:/Users/Acer/Desktop/UPB/Programming Paradigms/test/Paradigms.db";
 
     /**
      * Connect to a sample database
@@ -18,11 +17,17 @@ public class MysqlConnect {
 
     public MysqlConnect() { }
 
-    public void getAll() throws SQLException{
+    public void getAll() {
         try{
-            c = DriverManager.getConnection(URL, USER, PW);
+            Connection conn = connect();
+
+            if ( conn.isValid(0) )
+                System.out.println("SUCESSO");
+            else
+                System.out.println("FALHOU");
+
             //EXECUTE SQL COMMANDS AND LOAD RESULTS TO RESULTSET
-            Statement stmt = c.createStatement();
+            Statement stmt = conn.createStatement();
             String sql = "SELECT * FROM Users";
             ResultSet rs = stmt.executeQuery(sql);
 
@@ -36,26 +41,25 @@ public class MysqlConnect {
             }
 
             stmt.close();
+            conn.close();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
-        } finally{
-            c.close();
         }
 
     }
 
-    public void insertInfo(String email, String name, String pw){
+    public void insertUser(String email, String name, String pw){
         try{
-            c = DriverManager.getConnection(URL, USER, PW);
+            Connection conn = connect();
 
             String sql = "INSERT INTO Users VALUES";
-            sql = sql + "(" + email + ", '"+ name + "', '" + pw +"');";
+            sql = sql + "('" + email + "', '"+ name + "', '" + pw +"');";
 
-            Statement stmt = c.createStatement();
+            Statement stmt = conn.createStatement();
             stmt.executeUpdate(sql);
             System.out.println("Successfully inserted user.");
-            c.close();
 
+            conn.close();
         } catch(SQLException e){
             System.out.println(e.getMessage());
         }
@@ -63,10 +67,11 @@ public class MysqlConnect {
 
     private Connection connect() {
         // SQLite connection string
-        String url = "jdbc:sqlite:" + PATH;
         Connection conn = null;
         try {
-            conn = DriverManager.getConnection(url);
+            conn = DriverManager.getConnection("jdbc:sqlite:"+PATH);
+            //conn = DriverManager.getConnection(URL, USER, PW);
+            System.out.println("Successfully connected to the database.");
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
@@ -74,11 +79,11 @@ public class MysqlConnect {
 
     }
 
-    public void insertUser(String name, String email,String password)
-    {
+    /*
+    public void insertUser(String name, String email,String password) {
         String sql = "INSERT INTO Users(name,email,password) VALUES(?,?,?)";
 
-        try (Connection conn = this.connect()) {
+        try (Connection conn = connect()) {
             try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
                 //System.out.println("passa");
                 pstmt.setString(1, name);
@@ -92,18 +97,20 @@ public class MysqlConnect {
             e.printStackTrace();
         }
     }
+    */
 
     // to test 2 cases: if User already exists when registering a new one
     // and to check if the Login info is correct when trying to log in
     public boolean isUser(String squery){
         boolean res = false;
 
-        try(Connection conn = this.connect()) {
+        try(Connection conn = connect()) {
             try (PreparedStatement pStmt = conn.prepareStatement(squery)){
                 ResultSet rSet = pStmt.executeQuery();
                 if(rSet.next())     // if the query returns some result then res=true
                     res = true;     // if not, res is already false
             }
+            conn.close();
         } catch (SQLException e){
             e.printStackTrace();
         }
@@ -114,12 +121,13 @@ public class MysqlConnect {
     public String getName(String email){
         String squery = "SELECT * FROM Users WHERE email IS '" + email + "';";
 
-        try(Connection conn = this.connect()) {
+        try(Connection conn = connect()) {
             try (PreparedStatement pStmt = conn.prepareStatement(squery)){
                 ResultSet rSet = pStmt.executeQuery();
                 if(rSet.next())
                     return rSet.getString("Name");
             }
+            conn.close();
         } catch (SQLException e){
             e.printStackTrace();
         }

@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a301878-06b9-49b5-bcbe-754de47c728e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/database/MysqlConnect.java" afterPath="$PROJECT_DIR$/src/database/MysqlConnect.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/output/Interface.java" afterPath="$PROJECT_DIR$/src/output/Interface.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/output/Weather.java" afterPath="$PROJECT_DIR$/src/output/Weather.java" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/out/production/WeatherSuggestions/database/MysqlConnect.class" afterPath="$PROJECT_DIR$/out/production/WeatherSuggestions/database/MysqlConnect.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/WeatherSuggestions/database/TestConnection.class" afterPath="$PROJECT_DIR$/out/production/WeatherSuggestions/database/TestConnection.class" />
+      <change beforePath="$PROJECT_DIR$/src/database/MysqlConnect.java" afterPath="$PROJECT_DIR$/src/database/MysqlConnect.java" />
+      <change beforePath="$PROJECT_DIR$/src/database/TestConnection.java" afterPath="$PROJECT_DIR$/src/database/TestConnection.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,9 +32,18 @@
       <file leaf-file-name="ApiCalls.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/server/ApiCalls.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-238">
-              <caret line="106" column="49" lean-forward="false" selection-start-line="106" selection-start-column="36" selection-end-line="106" selection-end-column="49" />
+            <state relative-caret-position="525">
+              <caret line="296" column="5" lean-forward="false" selection-start-line="296" selection-start-column="5" selection-end-line="296" selection-end-column="5" />
               <folding>
+                <element signature="method#main#0;class#ApiCalls#0" expanded="false" />
+                <element signature="e#730#791#0" expanded="false" />
+                <element signature="method#sendGetAccu#0;class#ApiCalls#0" expanded="false" />
+                <element signature="e#1181#1207#0" expanded="false" />
+                <element signature="method#getKey#0;class#ApiCalls#0" expanded="false" />
+                <element signature="method#getCurrentConditions#0;class#ApiCalls#0" expanded="false" />
+                <element signature="method#getDaily5DaysForecast#0;class#ApiCalls#0" expanded="false" />
+                <element signature="method#getHourly12HoursForecast#0;class#ApiCalls#0" expanded="false" />
+                <element signature="method#sendGet#0;class#ApiCalls#0" expanded="false" />
                 <element signature="method#sendPost#0;class#ApiCalls#0" expanded="false" />
               </folding>
             </state>
@@ -43,8 +53,8 @@
       <file leaf-file-name="ApiKeys.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ApiKeys.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="32" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="32" />
+            <state relative-caret-position="63">
+              <caret line="3" column="32" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -53,39 +63,83 @@
       <file leaf-file-name="Weather.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/output/Weather.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="357">
+              <caret line="35" column="32" lean-forward="false" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Interface.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Interface.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/output/Interface.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="820" column="109" lean-forward="false" selection-start-line="820" selection-start-column="109" selection-end-line="820" selection-end-column="109" />
+            <state relative-caret-position="273">
+              <caret line="376" column="25" lean-forward="false" selection-start-line="376" selection-start-column="25" selection-end-line="376" selection-end-column="25" />
               <folding>
-                <element signature="e#1080#1089#0" expanded="true" />
-                <element signature="e#1137#1138#0" expanded="true" />
-                <element signature="e#1165#1166#0" expanded="true" />
+                <element signature="class#2639:9605" expanded="false" />
+                <element signature="method#handle#0;class#2639:9605" expanded="false" />
+                <element signature="class#4307:9324" expanded="false" />
+                <element signature="method#handle#0;class#4307:9324" expanded="false" />
+                <element signature="class#9031:9281" expanded="false" />
+                <element signature="class#9368:9579" expanded="false" />
+                <element signature="class#9667:12765" expanded="false" />
+                <element signature="method#handle#0;class#9667:12765" expanded="false" />
+                <element signature="class#11397:11608" expanded="false" />
+                <element signature="class#11652:12739" expanded="false" />
+                <element signature="method#handle#0;class#11652:12739" expanded="false" />
+                <element signature="class#14351:14562" expanded="false" />
+                <element signature="class#17805:18134" expanded="false" />
+                <element signature="method#handle#0;class#17805:18134" expanded="false" />
+                <element signature="class#18188:31719" expanded="false" />
+                <element signature="method#handle#0;class#18188:31719" expanded="false" />
+                <element signature="class#21111:21453" expanded="false" />
+                <element signature="method#handle#0;class#21111:21453" expanded="false" />
+                <element signature="class#21515:31661" expanded="false" />
+                <element signature="method#handle#0;class#21515:31661" expanded="false" />
+                <element signature="class#31002:31414" expanded="false" />
+                <element signature="method#handle#0;class#31002:31414" expanded="false" />
+                <element signature="class#31775:46379" expanded="false" />
+                <element signature="method#handle#0;class#31775:46379" expanded="false" />
+                <element signature="class#34704:35046" expanded="false" />
+                <element signature="method#handle#0;class#34704:35046" expanded="false" />
+                <element signature="class#35108:46321" expanded="false" />
+                <element signature="method#handle#0;class#35108:46321" expanded="false" />
+                <element signature="class#45660:46074" expanded="false" />
+                <element signature="method#handle#0;class#45660:46074" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MysqlConnect.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="NOTES.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/NOTES.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="252">
+                <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MysqlConnect.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/database/MysqlConnect.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-              <folding>
-                <element signature="method#isUser#0;class#MysqlConnect#0" expanded="false" />
-                <element signature="method#getName#0;class#MysqlConnect#0" expanded="false" />
-                <marker date="1515247373090" expanded="false" signature="2769:2905" ph="{...}" />
-              </folding>
+            <state relative-caret-position="546">
+              <caret line="26" column="45" lean-forward="true" selection-start-line="26" selection-start-column="45" selection-end-line="26" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestConnection.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/database/TestConnection.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="8" column="20" lean-forward="false" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -124,13 +178,14 @@
         <option value="$PROJECT_DIR$/src/ApiCalls.java" />
         <option value="$PROJECT_DIR$/src/database/Connection.java" />
         <option value="$PROJECT_DIR$/src/output/Date.java" />
-        <option value="$PROJECT_DIR$/src/database/TestConnection.java" />
         <option value="$PROJECT_DIR$/NOTES.md" />
         <option value="$PROJECT_DIR$/ApiKeys.txt" />
         <option value="$PROJECT_DIR$/src/server/ApiCalls.java" />
-        <option value="$PROJECT_DIR$/src/database/MysqlConnect.java" />
         <option value="$PROJECT_DIR$/src/output/Weather.java" />
+        <option value="$PROJECT_DIR$/src/database/TestConnection.java" />
         <option value="$PROJECT_DIR$/src/output/Interface.java" />
+        <option value="$PROJECT_DIR$/src/server/Bio_lab13maybe.java" />
+        <option value="$PROJECT_DIR$/src/database/MysqlConnect.java" />
       </list>
     </option>
   </component>
@@ -162,8 +217,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -202,8 +259,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -236,9 +291,35 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.Interface">
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+    </configuration>
     <configuration name="ApiCalls" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="server.ApiCalls" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="WeatherSuggestions" />
+      <envs />
+    </configuration>
+    <configuration name="Bio_lab13maybe" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="server.Bio_lab13maybe" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -288,13 +369,6 @@
       <module name="WeatherSuggestions" />
       <envs />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <module />
-    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" />
@@ -328,12 +402,6 @@
       </option>
       <envs />
       <patterns />
-    </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
-      <option name="PROGRAM_PARAMETERS" />
-      <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
@@ -369,16 +437,24 @@
       <properties />
       <listeners />
     </configuration>
-    <list size="3">
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+    </configuration>
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Application.ApiCalls" />
       <item index="1" class="java.lang.String" itemvalue="Application.Interface" />
       <item index="2" class="java.lang.String" itemvalue="Application.TestConnection" />
+      <item index="3" class="java.lang.String" itemvalue="Application.Bio_lab13maybe" />
     </list>
     <recent_temporary>
-      <list size="3">
+      <list size="4">
         <item index="0" class="java.lang.String" itemvalue="Application.Interface" />
-        <item index="1" class="java.lang.String" itemvalue="Application.ApiCalls" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Bio_lab13maybe" />
         <item index="2" class="java.lang.String" itemvalue="Application.TestConnection" />
+        <item index="3" class="java.lang.String" itemvalue="Application.ApiCalls" />
       </list>
     </recent_temporary>
   </component>
@@ -523,29 +599,27 @@
     <option name="totallyTimeSpent" value="117096000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
-    <editor active="true" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32786885" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281768" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3635359" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36363637" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1647145" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16458334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39889503" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="SFDX" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -554,6 +628,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Salesforce" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32786885" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289183" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Log Manager" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -577,15 +652,15 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39889503" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Salesforce" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281768" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32786885" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32596686" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36363637" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16510417" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1647145" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289183" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Log Manager" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -618,28 +693,16 @@
           <option name="timeStamp" value="30" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="31" />
+      <option name="time" value="37" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/server/ApiCalls.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="22" column="10" lean-forward="false" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
-          <folding>
-            <element signature="method#sendPost#0;class#ApiCalls#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/output/Weather.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="9" column="6" lean-forward="false" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -647,11 +710,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="20" column="52" lean-forward="false" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
-          <folding>
-            <element signature="method#isUser#0;class#MysqlConnect#0" expanded="false" />
-            <element signature="method#getName#0;class#MysqlConnect#0" expanded="false" />
-            <marker date="1515247373090" expanded="false" signature="2769:2905" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -668,9 +727,36 @@
         <state relative-caret-position="1806">
           <caret line="113" column="55" lean-forward="true" selection-start-line="113" selection-start-column="55" selection-end-line="113" selection-end-column="55" />
           <folding>
-            <element signature="e#1080#1089#0" expanded="true" />
-            <element signature="e#1137#1138#0" expanded="true" />
-            <element signature="e#1165#1166#0" expanded="true" />
+            <element signature="class#2639:9605" expanded="false" />
+            <element signature="method#handle#0;class#2639:9605" expanded="false" />
+            <element signature="class#4307:9324" expanded="false" />
+            <element signature="method#handle#0;class#4307:9324" expanded="false" />
+            <element signature="class#9031:9281" expanded="false" />
+            <element signature="class#9368:9579" expanded="false" />
+            <element signature="class#9667:12765" expanded="false" />
+            <element signature="method#handle#0;class#9667:12765" expanded="false" />
+            <element signature="class#11397:11608" expanded="false" />
+            <element signature="class#11652:12739" expanded="false" />
+            <element signature="method#handle#0;class#11652:12739" expanded="false" />
+            <element signature="class#14351:14562" expanded="false" />
+            <element signature="class#17805:18134" expanded="false" />
+            <element signature="method#handle#0;class#17805:18134" expanded="false" />
+            <element signature="class#18188:31719" expanded="false" />
+            <element signature="method#handle#0;class#18188:31719" expanded="false" />
+            <element signature="class#21111:21453" expanded="false" />
+            <element signature="method#handle#0;class#21111:21453" expanded="false" />
+            <element signature="class#21515:31661" expanded="false" />
+            <element signature="method#handle#0;class#21515:31661" expanded="false" />
+            <element signature="class#31002:31414" expanded="false" />
+            <element signature="method#handle#0;class#31002:31414" expanded="false" />
+            <element signature="class#31775:46379" expanded="false" />
+            <element signature="method#handle#0;class#31775:46379" expanded="false" />
+            <element signature="class#34704:35046" expanded="false" />
+            <element signature="method#handle#0;class#34704:35046" expanded="false" />
+            <element signature="class#35108:46321" expanded="false" />
+            <element signature="method#handle#0;class#35108:46321" expanded="false" />
+            <element signature="class#45660:46074" expanded="false" />
+            <element signature="method#handle#0;class#45660:46074" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -680,6 +766,15 @@
         <state relative-caret-position="462">
           <caret line="22" column="10" lean-forward="false" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
           <folding>
+            <element signature="method#main#0;class#ApiCalls#0" expanded="false" />
+            <element signature="e#730#791#0" expanded="false" />
+            <element signature="method#sendGetAccu#0;class#ApiCalls#0" expanded="false" />
+            <element signature="e#1181#1207#0" expanded="false" />
+            <element signature="method#getKey#0;class#ApiCalls#0" expanded="false" />
+            <element signature="method#getCurrentConditions#0;class#ApiCalls#0" expanded="false" />
+            <element signature="method#getDaily5DaysForecast#0;class#ApiCalls#0" expanded="false" />
+            <element signature="method#getHourly12HoursForecast#0;class#ApiCalls#0" expanded="false" />
+            <element signature="method#sendGet#0;class#ApiCalls#0" expanded="false" />
             <element signature="method#sendPost#0;class#ApiCalls#0" expanded="false" />
           </folding>
         </state>
@@ -689,11 +784,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="20" column="52" lean-forward="false" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
-          <folding>
-            <element signature="method#isUser#0;class#MysqlConnect#0" expanded="false" />
-            <element signature="method#getName#0;class#MysqlConnect#0" expanded="false" />
-            <marker date="1515247373090" expanded="false" signature="2769:2905" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -708,9 +799,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="672">
           <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -719,6 +808,15 @@
         <state relative-caret-position="336">
           <caret line="22" column="10" lean-forward="false" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
           <folding>
+            <element signature="method#main#0;class#ApiCalls#0" expanded="false" />
+            <element signature="e#730#791#0" expanded="false" />
+            <element signature="method#sendGetAccu#0;class#ApiCalls#0" expanded="false" />
+            <element signature="e#1181#1207#0" expanded="false" />
+            <element signature="method#getKey#0;class#ApiCalls#0" expanded="false" />
+            <element signature="method#getCurrentConditions#0;class#ApiCalls#0" expanded="false" />
+            <element signature="method#getDaily5DaysForecast#0;class#ApiCalls#0" expanded="false" />
+            <element signature="method#getHourly12HoursForecast#0;class#ApiCalls#0" expanded="false" />
+            <element signature="method#sendGet#0;class#ApiCalls#0" expanded="false" />
             <element signature="method#sendPost#0;class#ApiCalls#0" expanded="false" />
           </folding>
         </state>
@@ -728,9 +826,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
           <caret line="7" column="27" lean-forward="false" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -738,11 +834,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="20" column="52" lean-forward="true" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
-          <folding>
-            <element signature="method#isUser#0;class#MysqlConnect#0" expanded="false" />
-            <element signature="method#getName#0;class#MysqlConnect#0" expanded="false" />
-            <marker date="1515247373090" expanded="false" signature="2769:2905" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -765,9 +857,36 @@
         <state relative-caret-position="1764">
           <caret line="84" column="112" lean-forward="true" selection-start-line="84" selection-start-column="112" selection-end-line="84" selection-end-column="112" />
           <folding>
-            <element signature="e#1080#1089#0" expanded="true" />
-            <element signature="e#1137#1138#0" expanded="true" />
-            <element signature="e#1165#1166#0" expanded="true" />
+            <element signature="class#2639:9605" expanded="false" />
+            <element signature="method#handle#0;class#2639:9605" expanded="false" />
+            <element signature="class#4307:9324" expanded="false" />
+            <element signature="method#handle#0;class#4307:9324" expanded="false" />
+            <element signature="class#9031:9281" expanded="false" />
+            <element signature="class#9368:9579" expanded="false" />
+            <element signature="class#9667:12765" expanded="false" />
+            <element signature="method#handle#0;class#9667:12765" expanded="false" />
+            <element signature="class#11397:11608" expanded="false" />
+            <element signature="class#11652:12739" expanded="false" />
+            <element signature="method#handle#0;class#11652:12739" expanded="false" />
+            <element signature="class#14351:14562" expanded="false" />
+            <element signature="class#17805:18134" expanded="false" />
+            <element signature="method#handle#0;class#17805:18134" expanded="false" />
+            <element signature="class#18188:31719" expanded="false" />
+            <element signature="method#handle#0;class#18188:31719" expanded="false" />
+            <element signature="class#21111:21453" expanded="false" />
+            <element signature="method#handle#0;class#21111:21453" expanded="false" />
+            <element signature="class#21515:31661" expanded="false" />
+            <element signature="method#handle#0;class#21515:31661" expanded="false" />
+            <element signature="class#31002:31414" expanded="false" />
+            <element signature="method#handle#0;class#31002:31414" expanded="false" />
+            <element signature="class#31775:46379" expanded="false" />
+            <element signature="method#handle#0;class#31775:46379" expanded="false" />
+            <element signature="class#34704:35046" expanded="false" />
+            <element signature="method#handle#0;class#34704:35046" expanded="false" />
+            <element signature="class#35108:46321" expanded="false" />
+            <element signature="method#handle#0;class#35108:46321" expanded="false" />
+            <element signature="class#45660:46074" expanded="false" />
+            <element signature="method#handle#0;class#45660:46074" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -777,6 +896,15 @@
         <state relative-caret-position="336">
           <caret line="22" column="10" lean-forward="false" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
           <folding>
+            <element signature="method#main#0;class#ApiCalls#0" expanded="false" />
+            <element signature="e#730#791#0" expanded="false" />
+            <element signature="method#sendGetAccu#0;class#ApiCalls#0" expanded="false" />
+            <element signature="e#1181#1207#0" expanded="false" />
+            <element signature="method#getKey#0;class#ApiCalls#0" expanded="false" />
+            <element signature="method#getCurrentConditions#0;class#ApiCalls#0" expanded="false" />
+            <element signature="method#getDaily5DaysForecast#0;class#ApiCalls#0" expanded="false" />
+            <element signature="method#getHourly12HoursForecast#0;class#ApiCalls#0" expanded="false" />
+            <element signature="method#sendGet#0;class#ApiCalls#0" expanded="false" />
             <element signature="method#sendPost#0;class#ApiCalls#0" expanded="false" />
           </folding>
         </state>
@@ -786,9 +914,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
           <caret line="7" column="27" lean-forward="false" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -797,9 +923,36 @@
         <state relative-caret-position="1848">
           <caret line="109" column="26" lean-forward="false" selection-start-line="109" selection-start-column="26" selection-end-line="109" selection-end-column="26" />
           <folding>
-            <element signature="e#1080#1089#0" expanded="true" />
-            <element signature="e#1137#1138#0" expanded="true" />
-            <element signature="e#1165#1166#0" expanded="true" />
+            <element signature="class#2639:9605" expanded="false" />
+            <element signature="method#handle#0;class#2639:9605" expanded="false" />
+            <element signature="class#4307:9324" expanded="false" />
+            <element signature="method#handle#0;class#4307:9324" expanded="false" />
+            <element signature="class#9031:9281" expanded="false" />
+            <element signature="class#9368:9579" expanded="false" />
+            <element signature="class#9667:12765" expanded="false" />
+            <element signature="method#handle#0;class#9667:12765" expanded="false" />
+            <element signature="class#11397:11608" expanded="false" />
+            <element signature="class#11652:12739" expanded="false" />
+            <element signature="method#handle#0;class#11652:12739" expanded="false" />
+            <element signature="class#14351:14562" expanded="false" />
+            <element signature="class#17805:18134" expanded="false" />
+            <element signature="method#handle#0;class#17805:18134" expanded="false" />
+            <element signature="class#18188:31719" expanded="false" />
+            <element signature="method#handle#0;class#18188:31719" expanded="false" />
+            <element signature="class#21111:21453" expanded="false" />
+            <element signature="method#handle#0;class#21111:21453" expanded="false" />
+            <element signature="class#21515:31661" expanded="false" />
+            <element signature="method#handle#0;class#21515:31661" expanded="false" />
+            <element signature="class#31002:31414" expanded="false" />
+            <element signature="method#handle#0;class#31002:31414" expanded="false" />
+            <element signature="class#31775:46379" expanded="false" />
+            <element signature="method#handle#0;class#31775:46379" expanded="false" />
+            <element signature="class#34704:35046" expanded="false" />
+            <element signature="method#handle#0;class#34704:35046" expanded="false" />
+            <element signature="class#35108:46321" expanded="false" />
+            <element signature="method#handle#0;class#35108:46321" expanded="false" />
+            <element signature="class#45660:46074" expanded="false" />
+            <element signature="method#handle#0;class#45660:46074" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -808,11 +961,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="18" column="31" lean-forward="false" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
-          <folding>
-            <element signature="method#isUser#0;class#MysqlConnect#0" expanded="false" />
-            <element signature="method#getName#0;class#MysqlConnect#0" expanded="false" />
-            <marker date="1515247373090" expanded="false" signature="2769:2905" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -835,6 +984,15 @@
         <state relative-caret-position="336">
           <caret line="22" column="10" lean-forward="false" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
           <folding>
+            <element signature="method#main#0;class#ApiCalls#0" expanded="false" />
+            <element signature="e#730#791#0" expanded="false" />
+            <element signature="method#sendGetAccu#0;class#ApiCalls#0" expanded="false" />
+            <element signature="e#1181#1207#0" expanded="false" />
+            <element signature="method#getKey#0;class#ApiCalls#0" expanded="false" />
+            <element signature="method#getCurrentConditions#0;class#ApiCalls#0" expanded="false" />
+            <element signature="method#getDaily5DaysForecast#0;class#ApiCalls#0" expanded="false" />
+            <element signature="method#getHourly12HoursForecast#0;class#ApiCalls#0" expanded="false" />
+            <element signature="method#sendGet#0;class#ApiCalls#0" expanded="false" />
             <element signature="method#sendPost#0;class#ApiCalls#0" expanded="false" />
           </folding>
         </state>
@@ -844,9 +1002,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
           <caret line="7" column="27" lean-forward="false" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -855,9 +1011,36 @@
         <state relative-caret-position="1848">
           <caret line="109" column="26" lean-forward="false" selection-start-line="109" selection-start-column="26" selection-end-line="109" selection-end-column="26" />
           <folding>
-            <element signature="e#1080#1089#0" expanded="true" />
-            <element signature="e#1137#1138#0" expanded="true" />
-            <element signature="e#1165#1166#0" expanded="true" />
+            <element signature="class#2639:9605" expanded="false" />
+            <element signature="method#handle#0;class#2639:9605" expanded="false" />
+            <element signature="class#4307:9324" expanded="false" />
+            <element signature="method#handle#0;class#4307:9324" expanded="false" />
+            <element signature="class#9031:9281" expanded="false" />
+            <element signature="class#9368:9579" expanded="false" />
+            <element signature="class#9667:12765" expanded="false" />
+            <element signature="method#handle#0;class#9667:12765" expanded="false" />
+            <element signature="class#11397:11608" expanded="false" />
+            <element signature="class#11652:12739" expanded="false" />
+            <element signature="method#handle#0;class#11652:12739" expanded="false" />
+            <element signature="class#14351:14562" expanded="false" />
+            <element signature="class#17805:18134" expanded="false" />
+            <element signature="method#handle#0;class#17805:18134" expanded="false" />
+            <element signature="class#18188:31719" expanded="false" />
+            <element signature="method#handle#0;class#18188:31719" expanded="false" />
+            <element signature="class#21111:21453" expanded="false" />
+            <element signature="method#handle#0;class#21111:21453" expanded="false" />
+            <element signature="class#21515:31661" expanded="false" />
+            <element signature="method#handle#0;class#21515:31661" expanded="false" />
+            <element signature="class#31002:31414" expanded="false" />
+            <element signature="method#handle#0;class#31002:31414" expanded="false" />
+            <element signature="class#31775:46379" expanded="false" />
+            <element signature="method#handle#0;class#31775:46379" expanded="false" />
+            <element signature="class#34704:35046" expanded="false" />
+            <element signature="method#handle#0;class#34704:35046" expanded="false" />
+            <element signature="class#35108:46321" expanded="false" />
+            <element signature="method#handle#0;class#35108:46321" expanded="false" />
+            <element signature="class#45660:46074" expanded="false" />
+            <element signature="method#handle#0;class#45660:46074" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -866,11 +1049,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="18" column="31" lean-forward="false" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
-          <folding>
-            <element signature="method#isUser#0;class#MysqlConnect#0" expanded="false" />
-            <element signature="method#getName#0;class#MysqlConnect#0" expanded="false" />
-            <marker date="1515247373090" expanded="false" signature="2769:2905" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -892,11 +1071,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="method#isUser#0;class#MysqlConnect#0" expanded="false" />
-            <element signature="method#getName#0;class#MysqlConnect#0" expanded="false" />
-            <marker date="1515247373090" expanded="false" signature="2769:2905" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -912,9 +1087,36 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1080#1089#0" expanded="true" />
-            <element signature="e#1137#1138#0" expanded="true" />
-            <element signature="e#1165#1166#0" expanded="true" />
+            <element signature="class#2639:9605" expanded="false" />
+            <element signature="method#handle#0;class#2639:9605" expanded="false" />
+            <element signature="class#4307:9324" expanded="false" />
+            <element signature="method#handle#0;class#4307:9324" expanded="false" />
+            <element signature="class#9031:9281" expanded="false" />
+            <element signature="class#9368:9579" expanded="false" />
+            <element signature="class#9667:12765" expanded="false" />
+            <element signature="method#handle#0;class#9667:12765" expanded="false" />
+            <element signature="class#11397:11608" expanded="false" />
+            <element signature="class#11652:12739" expanded="false" />
+            <element signature="method#handle#0;class#11652:12739" expanded="false" />
+            <element signature="class#14351:14562" expanded="false" />
+            <element signature="class#17805:18134" expanded="false" />
+            <element signature="method#handle#0;class#17805:18134" expanded="false" />
+            <element signature="class#18188:31719" expanded="false" />
+            <element signature="method#handle#0;class#18188:31719" expanded="false" />
+            <element signature="class#21111:21453" expanded="false" />
+            <element signature="method#handle#0;class#21111:21453" expanded="false" />
+            <element signature="class#21515:31661" expanded="false" />
+            <element signature="method#handle#0;class#21515:31661" expanded="false" />
+            <element signature="class#31002:31414" expanded="false" />
+            <element signature="method#handle#0;class#31002:31414" expanded="false" />
+            <element signature="class#31775:46379" expanded="false" />
+            <element signature="method#handle#0;class#31775:46379" expanded="false" />
+            <element signature="class#34704:35046" expanded="false" />
+            <element signature="method#handle#0;class#34704:35046" expanded="false" />
+            <element signature="class#35108:46321" expanded="false" />
+            <element signature="method#handle#0;class#35108:46321" expanded="false" />
+            <element signature="class#45660:46074" expanded="false" />
+            <element signature="method#handle#0;class#45660:46074" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -924,6 +1126,15 @@
         <state relative-caret-position="493">
           <caret line="29" column="119" lean-forward="false" selection-start-line="29" selection-start-column="80" selection-end-line="29" selection-end-column="119" />
           <folding>
+            <element signature="method#main#0;class#ApiCalls#0" expanded="false" />
+            <element signature="e#730#791#0" expanded="false" />
+            <element signature="method#sendGetAccu#0;class#ApiCalls#0" expanded="false" />
+            <element signature="e#1181#1207#0" expanded="false" />
+            <element signature="method#getKey#0;class#ApiCalls#0" expanded="false" />
+            <element signature="method#getCurrentConditions#0;class#ApiCalls#0" expanded="false" />
+            <element signature="method#getDaily5DaysForecast#0;class#ApiCalls#0" expanded="false" />
+            <element signature="method#getHourly12HoursForecast#0;class#ApiCalls#0" expanded="false" />
+            <element signature="method#sendGet#0;class#ApiCalls#0" expanded="false" />
             <element signature="method#sendPost#0;class#ApiCalls#0" expanded="false" />
           </folding>
         </state>
@@ -933,8 +1144,45 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="41" column="1" lean-forward="false" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/output/Interface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="class#2639:9605" expanded="false" />
+            <element signature="method#handle#0;class#2639:9605" expanded="false" />
+            <element signature="class#4307:9324" expanded="false" />
+            <element signature="method#handle#0;class#4307:9324" expanded="false" />
+            <element signature="class#9031:9281" expanded="false" />
+            <element signature="class#9368:9579" expanded="false" />
+            <element signature="class#9667:12765" expanded="false" />
+            <element signature="method#handle#0;class#9667:12765" expanded="false" />
+            <element signature="class#11397:11608" expanded="false" />
+            <element signature="class#11652:12739" expanded="false" />
+            <element signature="method#handle#0;class#11652:12739" expanded="false" />
+            <element signature="class#14351:14562" expanded="false" />
+            <element signature="class#17805:18134" expanded="false" />
+            <element signature="method#handle#0;class#17805:18134" expanded="false" />
+            <element signature="class#18188:31719" expanded="false" />
+            <element signature="method#handle#0;class#18188:31719" expanded="false" />
+            <element signature="class#21111:21453" expanded="false" />
+            <element signature="method#handle#0;class#21111:21453" expanded="false" />
+            <element signature="class#21515:31661" expanded="false" />
+            <element signature="method#handle#0;class#21515:31661" expanded="false" />
+            <element signature="class#31002:31414" expanded="false" />
+            <element signature="method#handle#0;class#31002:31414" expanded="false" />
+            <element signature="class#31775:46379" expanded="false" />
+            <element signature="method#handle#0;class#31775:46379" expanded="false" />
+            <element signature="class#34704:35046" expanded="false" />
+            <element signature="method#handle#0;class#34704:35046" expanded="false" />
+            <element signature="class#35108:46321" expanded="false" />
+            <element signature="method#handle#0;class#35108:46321" expanded="false" />
+            <element signature="class#45660:46074" expanded="false" />
+            <element signature="method#handle#0;class#45660:46074" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -944,21 +1192,36 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1080#1089#0" expanded="true" />
-            <element signature="e#1137#1138#0" expanded="true" />
-            <element signature="e#1165#1166#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/output/Interface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#1080#1089#0" expanded="true" />
-            <element signature="e#1137#1138#0" expanded="true" />
-            <element signature="e#1165#1166#0" expanded="true" />
+            <element signature="class#2639:9605" expanded="false" />
+            <element signature="method#handle#0;class#2639:9605" expanded="false" />
+            <element signature="class#4307:9324" expanded="false" />
+            <element signature="method#handle#0;class#4307:9324" expanded="false" />
+            <element signature="class#9031:9281" expanded="false" />
+            <element signature="class#9368:9579" expanded="false" />
+            <element signature="class#9667:12765" expanded="false" />
+            <element signature="method#handle#0;class#9667:12765" expanded="false" />
+            <element signature="class#11397:11608" expanded="false" />
+            <element signature="class#11652:12739" expanded="false" />
+            <element signature="method#handle#0;class#11652:12739" expanded="false" />
+            <element signature="class#14351:14562" expanded="false" />
+            <element signature="class#17805:18134" expanded="false" />
+            <element signature="method#handle#0;class#17805:18134" expanded="false" />
+            <element signature="class#18188:31719" expanded="false" />
+            <element signature="method#handle#0;class#18188:31719" expanded="false" />
+            <element signature="class#21111:21453" expanded="false" />
+            <element signature="method#handle#0;class#21111:21453" expanded="false" />
+            <element signature="class#21515:31661" expanded="false" />
+            <element signature="method#handle#0;class#21515:31661" expanded="false" />
+            <element signature="class#31002:31414" expanded="false" />
+            <element signature="method#handle#0;class#31002:31414" expanded="false" />
+            <element signature="class#31775:46379" expanded="false" />
+            <element signature="method#handle#0;class#31775:46379" expanded="false" />
+            <element signature="class#34704:35046" expanded="false" />
+            <element signature="method#handle#0;class#34704:35046" expanded="false" />
+            <element signature="class#35108:46321" expanded="false" />
+            <element signature="method#handle#0;class#35108:46321" expanded="false" />
+            <element signature="class#45660:46074" expanded="false" />
+            <element signature="method#handle#0;class#45660:46074" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -996,45 +1259,28 @@
     <entry file="file://$PROJECT_DIR$/README.md" />
     <entry file="file://$PROJECT_DIR$/src/output/Date.java" />
     <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_131/jre/lib/postgresql-42.1.4.jar!/org/postgresql/core/v3/ConnectionFactoryImpl.class" />
-    <entry file="file://$PROJECT_DIR$/src/database/TestConnection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NOTES.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/MysqlConnect.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <element signature="method#isUser#0;class#MysqlConnect#0" expanded="false" />
-            <element signature="method#getName#0;class#MysqlConnect#0" expanded="false" />
-            <marker date="1515247373090" expanded="false" signature="2769:2905" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ApiKeys.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="32" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="32" />
+        <state relative-caret-position="63">
+          <caret line="3" column="32" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/server/ApiCalls.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-238">
-          <caret line="106" column="49" lean-forward="false" selection-start-line="106" selection-start-column="36" selection-end-line="106" selection-end-column="49" />
+        <state relative-caret-position="525">
+          <caret line="296" column="5" lean-forward="false" selection-start-line="296" selection-start-column="5" selection-end-line="296" selection-end-column="5" />
           <folding>
+            <element signature="method#main#0;class#ApiCalls#0" expanded="false" />
+            <element signature="e#730#791#0" expanded="false" />
+            <element signature="method#sendGetAccu#0;class#ApiCalls#0" expanded="false" />
+            <element signature="e#1181#1207#0" expanded="false" />
+            <element signature="method#getKey#0;class#ApiCalls#0" expanded="false" />
+            <element signature="method#getCurrentConditions#0;class#ApiCalls#0" expanded="false" />
+            <element signature="method#getDaily5DaysForecast#0;class#ApiCalls#0" expanded="false" />
+            <element signature="method#getHourly12HoursForecast#0;class#ApiCalls#0" expanded="false" />
+            <element signature="method#sendGet#0;class#ApiCalls#0" expanded="false" />
             <element signature="method#sendPost#0;class#ApiCalls#0" expanded="false" />
           </folding>
         </state>
@@ -1042,23 +1288,81 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/output/Weather.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+        <state relative-caret-position="357">
+          <caret line="35" column="32" lean-forward="false" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NOTES.md">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="252">
+            <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/TestConnection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="20" lean-forward="false" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/Bio_lab13maybe.java" />
+    <entry file="file://$PROJECT_DIR$/src/output/Interface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="376" column="25" lean-forward="false" selection-start-line="376" selection-start-column="25" selection-end-line="376" selection-end-column="25" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="class#2639:9605" expanded="false" />
+            <element signature="method#handle#0;class#2639:9605" expanded="false" />
+            <element signature="class#4307:9324" expanded="false" />
+            <element signature="method#handle#0;class#4307:9324" expanded="false" />
+            <element signature="class#9031:9281" expanded="false" />
+            <element signature="class#9368:9579" expanded="false" />
+            <element signature="class#9667:12765" expanded="false" />
+            <element signature="method#handle#0;class#9667:12765" expanded="false" />
+            <element signature="class#11397:11608" expanded="false" />
+            <element signature="class#11652:12739" expanded="false" />
+            <element signature="method#handle#0;class#11652:12739" expanded="false" />
+            <element signature="class#14351:14562" expanded="false" />
+            <element signature="class#17805:18134" expanded="false" />
+            <element signature="method#handle#0;class#17805:18134" expanded="false" />
+            <element signature="class#18188:31719" expanded="false" />
+            <element signature="method#handle#0;class#18188:31719" expanded="false" />
+            <element signature="class#21111:21453" expanded="false" />
+            <element signature="method#handle#0;class#21111:21453" expanded="false" />
+            <element signature="class#21515:31661" expanded="false" />
+            <element signature="method#handle#0;class#21515:31661" expanded="false" />
+            <element signature="class#31002:31414" expanded="false" />
+            <element signature="method#handle#0;class#31002:31414" expanded="false" />
+            <element signature="class#31775:46379" expanded="false" />
+            <element signature="method#handle#0;class#31775:46379" expanded="false" />
+            <element signature="class#34704:35046" expanded="false" />
+            <element signature="method#handle#0;class#34704:35046" expanded="false" />
+            <element signature="class#35108:46321" expanded="false" />
+            <element signature="method#handle#0;class#35108:46321" expanded="false" />
+            <element signature="class#45660:46074" expanded="false" />
+            <element signature="method#handle#0;class#45660:46074" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/output/Interface.java">
+    <entry file="file://$PROJECT_DIR$/src/database/MysqlConnect.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="820" column="109" lean-forward="false" selection-start-line="820" selection-start-column="109" selection-end-line="820" selection-end-column="109" />
-          <folding>
-            <element signature="e#1080#1089#0" expanded="true" />
-            <element signature="e#1137#1138#0" expanded="true" />
-            <element signature="e#1165#1166#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="546">
+          <caret line="26" column="45" lean-forward="true" selection-start-line="26" selection-start-column="45" selection-end-line="26" selection-end-column="45" />
+          <folding />
         </state>
       </provider>
     </entry>
